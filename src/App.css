@@ -35,10 +35,13 @@
   color: #c54109;
 }
 
+.main_color_bg {
+  background-color: #c54109;
+}
+
 .a_tag {
   text-decoration: none;
 }
-
 
 
 /* =================================Custom Scrollbars============================ */
@@ -73,6 +76,7 @@
 
 .main {
   height: 110vh;
+  text-shadow: 5px 5px 5px black;
 }
 
 .main h1 {
@@ -83,9 +87,6 @@
   margin-top: 35vh;
 }
 
-.bs_icon_main {
-  text-shadow: 10px 10px black;
-}
 
 @media screen and (max-width: 800px) {
   .main {
@@ -243,5 +244,197 @@
   text-shadow: 2px 2px 2px black;
 }
 
-/* =======================================================animation=========================================== */
+/* ======================================================= Products-page =========================================== */
+.product_landing_page {
+  background-image: linear-gradient(113deg, rgba(1, 1, 1, 1) 5%, rgba(0, 0, 0, 0.9) 10%, rgba(255, 255, 255, 0.05) 100%),
+    url(../public/assets/images/products.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 60vh;
+  position: relative;
+  top: 0;
+  border-bottom: 10px solid #c54109;
+}
 
+.main_products {
+  height: 70vh;
+  text-shadow: 5px 5px 5px black;
+}
+
+.main_products h2 {
+  font-size: 4rem;
+}
+
+.main_icon_products {
+  margin-top: 24vh;
+}
+
+@media screen and (max-width: 700px) {
+  .main_products {
+    flex-direction: column;
+  }
+
+  .main_icon_products {
+    position: absolute;
+    margin-top: 48vh;
+  }
+
+  .main_products h4 {
+    margin-top: 20vh;
+    font-size: 80%;
+  }
+
+  .main_products h2 {
+    font-size: 2rem;
+  }
+}
+
+/* ======================================================= gym-Designed =========================================== */
+
+.gym_design {
+  width: 100%;
+  height: 100%;
+}
+
+
+.product_carousel img {
+  width: 100%;
+  height: 60vh;
+  border-radius: 40px;
+  border: 10px solid #a75000;
+}
+
+.text_shadow_products {
+  text-shadow: 2px 2px 2px black;
+}
+
+@media screen and (max-width:500px) {
+  .gym_design h3 {
+    font-size: 80%;
+    text-align: center;
+  }
+}
+
+/* ======================================================= Products =========================================== */
+
+.products_section {
+  width: 100%;
+  height: 100%;
+  border-bottom: 10px solid #c54109;
+}
+
+.products_section input {
+  border: 2px solid #c54109;
+}
+
+.more_view_products {
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  height: 100%;
+  width: 25%;
+  background-color: #FFFFFF;
+}
+
+
+.products {
+  width: 75%;
+}
+
+.products_card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+}
+
+.card_pro {
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+
+@media screen and (max-width:800px) {
+  .main_products_div {
+    flex-direction: column;
+  }
+
+  .more_view_products {
+    width: 100%;
+  }
+
+  .products {
+    width: 100%;
+  }
+
+  .products_card {
+    width: 100%;
+  }
+}
+
+/* ======================================================= Single-Product =========================================== */
+
+.breadcrumb {
+  width: 100%;
+  height: 100%;
+}
+
+.breadcrumb nav {
+  margin-top: 10%;
+  border-top: 5px solid #555555;
+}
+
+.singleProduct {
+  border-bottom: 10px solid #c54109;
+}
+
+.product_detail {
+  text-align: end;
+}
+
+.order_color_1 {
+  background-color: #D05520;
+}
+
+.order_color_2 {
+  background-color: #D74671;
+}
+
+.main_img_product {
+  border-top: 5px solid #555555;
+  border-bottom: 5px solid #555555;
+  border-radius: 0 30px 0 30px;
+}
+
+.side_view_img {
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  height: 15vh;
+}
+
+.singleProduct_container {
+  border-bottom: 5px solid #555555;
+}
+
+.color_font {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+
+@media screen and (max-width:800px) {
+  .breadcrumb nav {
+    margin-top: 35%;
+  }
+
+  .product_detail {
+    text-align: center;
+  }
+
+  .side_view_img {
+    height: 10vh;
+  }
+
+  .color_font {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

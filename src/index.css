@@ -1,4 +1,7 @@
 body {
   margin: 0;
+  background-image: url(../public/assets/images/img-body.png);
+  background-repeat: no-repeat;
+  background-size: cover;
   padding: 0;
 }

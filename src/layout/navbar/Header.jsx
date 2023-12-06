@@ -4,6 +4,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import { BsFillTelephoneFill, BsEnvelopeFill } from "react-icons/bs";
+import { NavLink } from 'react-router-dom';
 
 
 const Header = () => {
@@ -25,7 +26,7 @@ const Header = () => {
                 <div className='main_navbar'>
                     <Navbar expand={"md"} className="navbar_2 mb-3">
                         <Container>
-                            <Navbar.Brand className='fw-bold fs-3 mx-2 brand_logo' href="#">ILIYAFITNESS</Navbar.Brand>
+                            <Navbar.Brand className='fw-bold fs-3 mx-2 brand_logo' href="/">ILIYAFITNESS</Navbar.Brand>
                             <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-md`} className='bg-warning' />
                             <Navbar.Offcanvas
                                 className="navbar_2"
@@ -40,12 +41,12 @@ const Header = () => {
                                 </Offcanvas.Header>
                                 <Offcanvas.Body className='navbar_2'>
                                     <Nav className="justify-content-end fw-semibold flex-grow-1">
-                                        <Nav.Link className='text-light ms-3' href="#action2">تماس با ما</Nav.Link>
-                                        <Nav.Link className='text-light ms-3' href="#action2">وبلاگ</Nav.Link>
-                                        <Nav.Link className='text-light ms-3' href="#action2">درباره ما</Nav.Link>
-                                        <Nav.Link className='text-light ms-3' href="#action2">محصولات</Nav.Link>
-                                        <Nav.Link className='text-light ms-3' href="#action1">خانه</Nav.Link>
-                                        <Nav.Link className='text-warning fw-bold ms-3' href="#action1">ورود</Nav.Link>
+                                        <NavLink className='text-light ms-3' to="/contactus">تماس با ما</NavLink>
+                                        <NavLink className='text-light ms-3' to="/blog">وبلاگ</NavLink>
+                                        <NavLink className='text-light ms-3' to="/aboutus">درباره ما</NavLink>
+                                        <NavLink className='text-light ms-3' to="/products">محصولات</NavLink>
+                                        <NavLink className='text-light ms-3' to="/">خانه</NavLink>
+                                        <NavLink className='text-warning fw-bold ms-3' to="/">ورود</NavLink>
                                     </Nav>
                                 </Offcanvas.Body>
                             </Navbar.Offcanvas>
