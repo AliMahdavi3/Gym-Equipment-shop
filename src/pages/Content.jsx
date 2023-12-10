@@ -3,6 +3,7 @@ import Home from './home/Home'
 import Products from './products/Products'
 import { Route, Routes } from 'react-router-dom'
 import SingleProduct from './products/SingleProduct'
+import AboutUs from './about/AboutUs'
 
 const Content = () => {
   return (
@@ -10,6 +11,7 @@ const Content = () => {
       <Route path="/" element={<Home />} />
       <Route path="products" element={<Products />} />
       <Route path="products/singleproduct" element={<SingleProduct />} />
+      <Route path="aboutus" element={<AboutUs />} />
     </Routes>
   )
 }
