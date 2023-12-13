@@ -4,6 +4,8 @@ import Products from './products/Products'
 import { Route, Routes } from 'react-router-dom'
 import SingleProduct from './products/SingleProduct'
 import AboutUs from './about/AboutUs'
+import Blog from './blog/Blog'
+import SingleArticle from './blog/SingleArticle'
 
 const Content = () => {
   return (
@@ -12,6 +14,8 @@ const Content = () => {
       <Route path="products" element={<Products />} />
       <Route path="products/singleproduct" element={<SingleProduct />} />
       <Route path="aboutus" element={<AboutUs />} />
+      <Route path="blog" element={<Blog />} />
+      <Route path="blog/singlearticle" element={<SingleArticle />} />
     </Routes>
   )
 }
