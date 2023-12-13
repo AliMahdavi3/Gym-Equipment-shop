@@ -6,6 +6,7 @@ import SingleProduct from './products/SingleProduct'
 import AboutUs from './about/AboutUs'
 import Blog from './blog/Blog'
 import SingleArticle from './blog/SingleArticle'
+import ContactUs from './contact/ContactUs'
 
 const Content = () => {
   return (
@@ -16,6 +17,7 @@ const Content = () => {
       <Route path="aboutus" element={<AboutUs />} />
       <Route path="blog" element={<Blog />} />
       <Route path="blog/singlearticle" element={<SingleArticle />} />
+      <Route path="contactus" element={<ContactUs />} />
     </Routes>
   )
 }

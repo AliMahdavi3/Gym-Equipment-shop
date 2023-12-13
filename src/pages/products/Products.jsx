@@ -2,7 +2,7 @@ import React from 'react'
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Carousel from 'react-bootstrap/Carousel';
-import { BsInstagram, BsPhone, BsStar, BsTelegram, BsWhatsapp } from 'react-icons/bs'
+import { BsInstagram, BsPhone, BsTelegram, BsWhatsapp } from 'react-icons/bs'
 
 const Products = () => {
     return (
