@@ -7,6 +7,8 @@ import AboutUs from './about/AboutUs'
 import Blog from './blog/Blog'
 import SingleArticle from './blog/SingleArticle'
 import ContactUs from './contact/ContactUs'
+import Login from './auth/login/Login'
+import Register from './auth/register/Register'
 
 const Content = () => {
   return (
@@ -18,6 +20,8 @@ const Content = () => {
       <Route path="blog" element={<Blog />} />
       <Route path="blog/singlearticle" element={<SingleArticle />} />
       <Route path="contactus" element={<ContactUs />} />
+      <Route path="login" element={<Login />} />
+      <Route path="register" element={<Register />} />
     </Routes>
   )
 }

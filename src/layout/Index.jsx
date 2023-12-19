@@ -4,10 +4,10 @@ import Content from '../pages/Content'
 
 const Index = () => {
   return (
-    <div>
+    <section>
       <Header/>
       <Content/>
-    </div>
+    </section>
   )
 }
 

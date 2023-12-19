@@ -7,9 +7,7 @@ import Index from './layout/Index';
 function App() {
   return (
     <BrowserRouter>
-      <div className="App">
         <Index />
-      </div>
     </BrowserRouter>
   );
 }

@@ -1,3 +1,24 @@
+@font-face {
+  font-family: "main_font";
+  src: url(../public/assets/fonts/Vazirmatn-Regular.ttf);
+}
+
+@font-face {
+  font-family: "H1_font";
+  src: url(../public/assets/fonts/Changa-Regular.ttf);
+}
+
+* {
+  font-family: "main_font";
+}
+
+h1,
+h2,
+h3 {
+  font-family: "H1_font";
+  font-weight: bolder;
+}
+
 .navbar_1 {
   width: 100%;
   height: 6vh;
@@ -5,7 +26,6 @@
   position: fixed;
   top: 0;
   z-index: 100;
-  width: 100%;
 }
 
 .main_navbar {
@@ -17,6 +37,12 @@
 
 .brand_logo {
   color: #c54109;
+  cursor: pointer;
+}
+
+.brand_logo img {
+  width: 60px;
+  background-color: hsl(18, 91%, 40%);
 }
 
 .navbar_2 {
@@ -74,12 +100,12 @@
   border-bottom: 10px solid #c54109;
 }
 
-.main {
+.home .main {
   height: 110vh;
   text-shadow: 5px 5px 5px black;
 }
 
-.main h1 {
+.home .main h1 {
   font-size: 5rem;
 }
 
@@ -87,9 +113,8 @@
   margin-top: 35vh;
 }
 
-
 @media screen and (max-width: 800px) {
-  .main {
+  .home .main {
     flex-direction: column;
   }
 
@@ -98,11 +123,11 @@
     margin-top: 75vh;
   }
 
-  .main h2 {
+  .home .main h2 {
     margin-top: 25vh;
   }
 
-  .main h1 {
+  .home .main h1 {
     font-size: 3rem;
   }
 }
@@ -173,6 +198,7 @@
   border: 5px solid #625858;
   box-shadow: 5px 5px 10px black;
   background-color: #b1b1b1;
+  height: 55vh;
 }
 
 /* ======================================= first-carousel ================================================= */
@@ -262,7 +288,7 @@
   text-shadow: 5px 5px 5px black;
 }
 
-.main_products h2 {
+.main_products h1 {
   font-size: 4rem;
 }
 
@@ -280,12 +306,12 @@
     margin-top: 48vh;
   }
 
-  .main_products h4 {
+  .main_products h2 {
     margin-top: 20vh;
     font-size: 80%;
   }
 
-  .main_products h2 {
+  .main_products h1 {
     font-size: 2rem;
   }
 }
@@ -453,25 +479,25 @@
   border-bottom: 10px solid #c54109;
 }
 
-.main_about {
+.about .main {
   height: 110vh;
   text-shadow: 5px 5px 5px black;
 }
 
-.main_about h1 {
+.about .main h1 {
   font-size: 5rem;
 }
 
 @media screen and (max-width: 800px) {
-  .main_about {
+  .about .main {
     flex-direction: column;
   }
 
-  .main_about h2 {
+  .about .main h2 {
     margin-top: 25vh;
   }
 
-  .main_about h1 {
+  .about .main h1 {
     font-size: 3rem;
   }
 }
@@ -766,3 +792,24 @@
   }
 }
 
+/* ================================================== Login =========================================== */
+
+.login_page {
+  padding-top: 10%;
+}
+
+.login_page .form-control {
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  background-color: #d4d4d4;
+}
+
+.form-check {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  flex-direction: row-reverse;
+}
+
+.login_page .row {
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
