@@ -15,10 +15,10 @@ const Content = () => {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="products" element={<Products />} />
-      <Route path="products/singleproduct" element={<SingleProduct />} />
+      <Route path="products/:productId" element={<SingleProduct />} />
       <Route path="aboutus" element={<AboutUs />} />
       <Route path="blog" element={<Blog />} />
-      <Route path="blog/singlearticle" element={<SingleArticle />} />
+      <Route path="blog/:articleId" element={<SingleArticle />} />
       <Route path="contactus" element={<ContactUs />} />
       <Route path="login" element={<Login />} />
       <Route path="register" element={<Register />} />

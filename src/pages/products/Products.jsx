@@ -1,12 +1,14 @@
 import React from 'react'
-import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
 import Carousel from 'react-bootstrap/Carousel';
 import { BsInstagram, BsTelegram } from 'react-icons/bs'
 import { FaWhatsappSquare } from "react-icons/fa";
 import Footer from '../../components/Footer';
+import ProductsSection from './ProductsSection';
 
 const Products = () => {
+
+    
+
     return (
         <>
             {/* Landing Page */}
@@ -84,104 +86,7 @@ const Products = () => {
                                 <li className='mb-3'><a className='a_tag text-dark' href="/">دستگاه بندسازی بانوان</a></li>
                             </ul>
                         </div>
-                        <div className='row d-flex justify-content-center align-items-center mx-2 products pb-4 rounded-4 mb-3'>
-                            <div className="products_card mx-2 my-2 col-12 col-md-4">
-                                <Card className='card_pro' style={{ width: "15rem" }}>
-                                    <Card.Img style={{ height: "14rem" }} variant="top" src="/assets/images/products (1).png" />
-                                    <Card.Body>
-                                        <Card.Title>Card Title</Card.Title>
-                                        <Card.Text>
-                                            Some quick example text to build on the card title and make up the
-                                            bulk of the card's content.
-                                        </Card.Text>
-                                        <Button className="main_color_bg border-0 fw-semibold">
-                                            <a className='a_tag text-light' href="products/singleproduct">
-                                            جزیئات بیشتر
-                                            </a></Button>
-                                    </Card.Body>
-                                </Card>
-                            </div>
-                            <div className="products_card mx-2 my-2 col-12 col-md-4">
-                                <Card className='card_pro' style={{ width: "15rem" }}>
-                                    <Card.Img style={{ height: "14rem" }} variant="top" src="/assets/images/products (2).png" />
-                                    <Card.Body>
-                                        <Card.Title>Card Title</Card.Title>
-                                        <Card.Text>
-                                            Some quick example text to build on the card title and make up the
-                                            bulk of the card's content.
-                                        </Card.Text>
-                                        <Button className="main_color_bg border-0 fw-semibold">
-                                            <a className='a_tag text-light' href="products/singleproduct">
-                                            جزیئات بیشتر
-                                            </a></Button>
-                                    </Card.Body>
-                                </Card>
-                            </div>
-                            <div className="products_card mx-2 my-2 col-12 col-md-4">
-                                <Card className='card_pro' style={{ width: "15rem" }}>
-                                    <Card.Img style={{ height: "14rem" }} variant="top" src="/assets/images/products (3).png" />
-                                    <Card.Body>
-                                        <Card.Title>Card Title</Card.Title>
-                                        <Card.Text>
-                                            Some quick example text to build on the card title and make up the
-                                            bulk of the card's content.
-                                        </Card.Text>
-                                        <Button className="main_color_bg border-0 fw-semibold">
-                                            <a className='a_tag text-light' href="products/singleproduct">
-                                            جزیئات بیشتر
-                                            </a></Button>
-                                    </Card.Body>
-                                </Card>
-                            </div>
-                            <div className="products_card mx-2 my-2 col-12 col-md-4">
-                                <Card className='card_pro' style={{ width: "15rem" }}>
-                                    <Card.Img style={{ height: "14rem" }} variant="top" src="/assets/images/products (4).png" />
-                                    <Card.Body>
-                                        <Card.Title>Card Title</Card.Title>
-                                        <Card.Text>
-                                            Some quick example text to build on the card title and make up the
-                                            bulk of the card's content.
-                                        </Card.Text>
-                                        <Button className="main_color_bg border-0 fw-semibold">
-                                            <a className='a_tag text-light' href="products/singleproduct">
-                                            جزیئات بیشتر
-                                            </a></Button>
-                                    </Card.Body>
-                                </Card>
-                            </div>
-                            <div className="products_card mx-2 my-2 col-12 col-md-4">
-                                <Card className='card_pro' style={{ width: "15rem" }}>
-                                    <Card.Img style={{ height: "14rem" }} variant="top" src="/assets/images/products (5).png" />
-                                    <Card.Body>
-                                        <Card.Title>Card Title</Card.Title>
-                                        <Card.Text>
-                                            Some quick example text to build on the card title and make up the
-                                            bulk of the card's content.
-                                        </Card.Text>
-                                        <Button className="main_color_bg border-0 fw-semibold">
-                                            <a className='a_tag text-light' href="products/singleproduct">
-                                            جزیئات بیشتر
-                                            </a></Button>
-                                    </Card.Body>
-                                </Card>
-                            </div>
-                            <div className="products_card mx-2 my-2 col-12 col-md-4">
-                                <Card className='card_pro' style={{ width: "15rem" }}>
-                                    <Card.Img style={{ height: "14rem" }} variant="top" src="/assets/images/products (6).png" />
-                                    <Card.Body>
-                                        <Card.Title>Card Title</Card.Title>
-                                        <Card.Text>
-                                            Some quick example text to build on the card title and make up the
-                                            bulk of the card's content.
-                                        </Card.Text>
-                                        <Button className="main_color_bg border-0 fw-semibold">
-                                            <a className='a_tag text-light' href="products/singleproduct">
-                                            جزیئات بیشتر
-                                            </a></Button>
-                                    </Card.Body>
-                                </Card>
-                            </div>
-                        </div>
+                        <ProductsSection/>
                     </div>
                     <div className='d-flex justify-content-center align-items-center'>
                         <nav aria-label="Page navigation example">
@@ -206,7 +111,7 @@ const Products = () => {
             </div>
 
             {/* Footer */}
-           <Footer/>
+            <Footer />
         </>
     )
 }

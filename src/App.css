@@ -361,7 +361,6 @@ h3 {
   background-color: #FFFFFF;
 }
 
-
 .products {
   width: 75%;
 }
@@ -375,6 +374,11 @@ h3 {
 
 .card_pro {
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+.card_description {
+  height: 6rem;
+  overflow: hidden;
 }
 
 
@@ -696,6 +700,19 @@ h3 {
   border: 3px solid #202020;
 }
 
+.blog_articles_content_1 {
+  height: 3rem;
+  overflow: hidden;
+}
+
+.blog_articlse .card-img-overlay {
+  background-color: hsl(180, 4%, 5%, 0.4);
+}
+
+.new_article .card-text {
+  height: 6rem;
+  overflow: hidden;
+}
 /* ==================================================== Single-article =============================================== */
 
 .single_article_img img {
