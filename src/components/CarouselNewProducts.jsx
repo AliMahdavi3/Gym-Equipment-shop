@@ -1,15 +1,17 @@
+import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import axios from 'axios';
 
-const CarouselComponent = ({ title }) => {
+const CarouselNewProducts = ({ title }) => {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:4000/api/bestSellings').then((res) => {
-            console.log(res.data.bestSellings);
-            setData(res.data.bestSellings)
+        axios.get('http://localhost:4000/api/products').then((res) => {
+            console.log(res.data.products);
+            const sortedProducts = res.data.products.sort((a, b) => (new Date(b.date) - new Date(a.date)));
+            const lastThreeProducts = sortedProducts.slice(0, 3);
+            setData(lastThreeProducts)
         }).catch((error) => {
             console.log(error.message);
         })
@@ -59,13 +61,12 @@ const CarouselComponent = ({ title }) => {
                                     <a className='a_tag fs-5 fw-semibold main_color' href="/">{d.title}</a>
                                     <p className='fw-semibold carousel_content'>{d.content}</p>
                                 </div>
-                            )) : null
+                            )): null
                     }
-
                 </Carousel>
             </div>
         </div>
     )
 }
 
-export default CarouselComponent
+export default CarouselNewProducts

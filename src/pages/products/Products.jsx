@@ -1,9 +1,9 @@
 import React from 'react'
-import Carousel from 'react-bootstrap/Carousel';
 import { BsInstagram, BsTelegram } from 'react-icons/bs'
 import { FaWhatsappSquare } from "react-icons/fa";
 import Footer from '../../components/Footer';
 import ProductsSection from './ProductsSection';
+import GymCarousel from './equippedGym/GymCarousel';
 
 const Products = () => {
 
@@ -34,37 +34,7 @@ const Products = () => {
             </div>
 
             {/* Slider */}
-            <div className='gym_design'>
-                <div className="container">
-                    <h2 dir='rtl' className='fw-bold pt-3'>باشگاه هایی که توسط
-                        <span className='fs-2 text-warning'> ایلیافیتنس </span> تجهیز شده اند</h2>
-                    <Carousel className='pt-3 pb-5'>
-                        <Carousel.Item className='product_carousel' interval={1000}>
-                            <img src="/assets/images/slide-gym.jpg" alt="" />
-                            <Carousel.Caption>
-                                <a href="/" className='a_tag text-light fs-3 text_shadow_products'>First slide label</a>
-                                <p className='text_shadow_products'>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                            </Carousel.Caption>
-                        </Carousel.Item>
-                        <Carousel.Item className='product_carousel' interval={500}>
-                            <img src="/assets/images/slide-gym.jpg" alt="" />
-                            <Carousel.Caption>
-                                <a href="/" className='a_tag text-light fs-3 text_shadow_products'>Second slide label</a>
-                                <p className='text_shadow_products'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                            </Carousel.Caption>
-                        </Carousel.Item>
-                        <Carousel.Item className='product_carousel'>
-                            <img src="/assets/images/slide-gym.jpg" alt="" />
-                            <Carousel.Caption>
-                                <a href="/" className='a_tag text-light fs-3 text_shadow_products'>Third slide label</a>
-                                <p className='text_shadow_products'>
-                                    Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-                                </p>
-                            </Carousel.Caption>
-                        </Carousel.Item>
-                    </Carousel>
-                </div>
-            </div>
+           <GymCarousel/>
 
             {/* Products-Section */}
             <div className="products_section">

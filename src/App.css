@@ -201,6 +201,11 @@ h3 {
   height: 55vh;
 }
 
+.carousel_content {
+  height: 1.2rem;
+  overflow: hidden;
+}
+
 /* ======================================= first-carousel ================================================= */
 
 .about_us {
@@ -224,12 +229,12 @@ h3 {
   border-bottom: 10px solid #d4531b;
 }
 
-.article_border {
-  border: none;
+.article_border .card-img-overlay{
+  background-color: hsl(180, 4%, 5%, 0.4);
+  border: 5px solid #EE7505;
 }
 
 .article_border img {
-  border: 5px solid #EE7505;
   box-shadow: 5px 5px 10px black;
 }
 
@@ -296,6 +301,16 @@ h3 {
   margin-top: 24vh;
 }
 
+.equipped_gym {
+  padding-top: 10rem;
+  text-align: end;
+}
+
+.equipped_gym img {
+  border: 5px solid #D05520;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
 @media screen and (max-width: 700px) {
   .main_products {
     flex-direction: column;
@@ -313,6 +328,10 @@ h3 {
 
   .main_products h1 {
     font-size: 2rem;
+  }
+
+  .equipped_gym {
+    text-align: center;
   }
 }
 
@@ -713,6 +732,12 @@ h3 {
   height: 6rem;
   overflow: hidden;
 }
+
+.main_article_content {
+  height: 4.3rem;
+  overflow: hidden;
+}
+
 /* ==================================================== Single-article =============================================== */
 
 .single_article_img img {
@@ -830,3 +855,4 @@ h3 {
 .login_page .row {
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
+

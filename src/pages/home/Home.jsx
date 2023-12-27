@@ -3,6 +3,8 @@ import { BsStarFill } from 'react-icons/bs'
 import Footer from '../../components/Footer';
 import CarouselComponent from '../../components/CarouselComponent';
 import LandingPage from '../../components/LandingPage';
+import CarouselNewProducts from '../../components/CarouselNewProducts';
+import Articles from './Articles';
 
 const Home = () => {
   return (
@@ -90,59 +92,10 @@ const Home = () => {
       </div>
 
       {/* Slider */}
-      <CarouselComponent title="جدیدترین محصولات"/>
-
+      <CarouselNewProducts title="جدیدترین محصولات"/>
+      
       {/* Articles */}
-      <div className="article pt-3 pb-5">
-        <div className="container">
-          <div className='d-flex title_font pt-3 justify-content-between align-items-center'>
-            <a className='a_tag fs-5 fw-bold' href="/">بیشتر</a>
-            <h2 className='fw-bold'>مقالات وبسایت</h2>
-          </div>
-          <div className="row">
-            <div className='col-12 col-md-6 my-3'>
-              <div className="card text-bg-dark rounded-5 article_border">
-                <img src="/assets/images/arti.jpg" className="card-img rounded-5" alt="article" />
-                <div dir='rtl' className="card-img-overlay">
-                  <h5 className="fw-bold card-title">مقاله جدید</h5>
-                  <p className="fw-semibold card-text">سلام خدمت تمامی دوستان و همراهان محترم سایت آموزشی فری لرن ، امیدوارم که حال همگیتون خوب باشه. لطفا</p>
-                  <p className="fw-semibold card-text"><small>Last updated 3 mins ago</small></p>
-                </div>
-              </div>
-            </div>
-            <div className='col-12 col-md-6 my-3'>
-              <div className="card text-bg-dark rounded-5 article_border">
-                <img src="/assets/images/arti (2).jpg" className="card-img rounded-5" alt="article" />
-                <div dir='rtl' className="card-img-overlay">
-                  <h5 className="fw-bold card-title">مقاله جدید</h5>
-                  <p className="fw-semibold card-text">سلام خدمت تمامی دوستان و همراهان محترم سایت آموزشی فری لرن ، امیدوارم که حال همگیتون خوب باشه. لطفا</p>
-                  <p className="fw-semibold card-text"><small>Last updated 3 mins ago</small></p>
-                </div>
-              </div>
-            </div>
-            <div className='col-12 col-md-6 my-3'>
-              <div className="card text-bg-dark rounded-5 article_border">
-                <img src="/assets/images/arti (3).jpg" className="card-img rounded-5" alt="article" />
-                <div dir='rtl' className="card-img-overlay">
-                  <h5 className="fw-bold card-title">مقاله جدید</h5>
-                  <p className="fw-semibold card-text">سلام خدمت تمامی دوستان و همراهان محترم سایت آموزشی فری لرن ، امیدوارم که حال همگیتون خوب باشه. لطفا</p>
-                  <p className="fw-semibold card-text"><small>Last updated 3 mins ago</small></p>
-                </div>
-              </div>
-            </div>
-            <div className='col-12 col-md-6 my-3'>
-              <div className="card text-bg-dark rounded-5 article_border">
-                <img src="/assets/images/arti (4).jpg" className="card-img rounded-5" alt="article" />
-                <div dir='rtl' className="card-img-overlay">
-                  <h5 className="fw-bold card-title">مقاله جدید</h5>
-                  <p className="fw-semibold card-text">سلام خدمت تمامی دوستان و همراهان محترم سایت آموزشی فری لرن ، امیدوارم که حال همگیتون خوب باشه. لطفا</p>
-                  <p className="fw-semibold card-text"><small>Last updated 3 mins ago</small></p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <Articles/>
 
       {/* comments of customers */}
       <div className="about_us">
