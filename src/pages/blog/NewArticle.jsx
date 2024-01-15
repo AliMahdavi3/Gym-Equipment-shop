@@ -29,9 +29,9 @@ const NewArticle = () => {
               <div className="col-md-7 text-end" style={{ "height": "100%" }}>
                 <div className="card-body">
                   <h3 className="card-title fw-semibold">جدید ترین مقاله</h3>
-                  <h5 className="my-4 card-title">{data.title_1}</h5>
+                  <h5 className="my-4 card-title">{data.title}</h5>
                   <p className="card-text fw-semibold">
-                    {data.content_1}
+                    {data.content}
                   </p>
                   <p className="card-text"><small className="text-body-secondary">{data.createdAt} : آخرین بروزرسانی</small></p>
                   <button className='btn btn-secondary fw-bold px-2'><a className='a_tag text-light' href={`blog/${data._id}`}>مطالعه</a></button>

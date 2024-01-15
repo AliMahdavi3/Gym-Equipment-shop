@@ -20,13 +20,13 @@ const ArticlesSection = () => {
                         data.map((d, index) => (
                             <div className='col-12 col-md-6 my-3'>
                                 <div className="card text-bg-dark rounded-5 article_border">
-                                    <img src={'http://localhost:4000/' + d.imageUrl}
+                                    <img src={'http://localhost:4000/' + d.imageUrl[0]}
                                         className="card-img rounded-5" alt="article" />
                                     <div className="card-img-overlay rounded-5 text-end">
                                         <h5 className="fw-semibold card-title">
-                                            <a className='a_tag text-warning' href={`blog/${d._id}`}>{d.title_1}</a></h5>
+                                            <a className='a_tag text-warning' href={`blog/${d._id}`}>{d.title}</a></h5>
                                         <p className="fw-medium card-text blog_articles_content_1">
-                                            <a className='a_tag text-light' href={`blog/${d._id}`}>{d.content_1}</a>
+                                            <a className='a_tag text-light' href={`blog/${d._id}`}>{d.content}</a>
                                         </p>
                                         <p className="fw-medium card-text"><small>{d.createdAt}</small></p>
                                     </div>

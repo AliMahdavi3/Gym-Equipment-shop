@@ -19,11 +19,11 @@ const ProductsSection = () => {
                 Array.isArray(data) ?
                     data.map((d, index) => (
                         <div key={index} className="products_card mx-2 my-2 col-12 col-md-4">
-                            <Card className='card_pro' style={{ width: "15rem" }}>
+                            <Card className='card_pro' style={{ width: "15rem"}}>
                                 <Card.Img style={{ height: "14rem" }} variant="top"
                                     src={'http://localhost:4000/' + d.imageUrl[0]} />
                                 <Card.Body className='text-end'>
-                                    <Card.Title>{d.title}</Card.Title>
+                                    <Card.Title className='text-secondary fw-bold product_title_card'>{d.title}</Card.Title>
                                     <Card.Text className='card_description'>
                                         {d.content}
                                     </Card.Text>

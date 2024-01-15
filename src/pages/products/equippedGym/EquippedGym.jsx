@@ -10,7 +10,7 @@ const EquippedGym = () => {
   console.log(equippedGymId);
 
   useEffect(() => {
-    axios.get(`http://localhost:4000/api/equippedGyms/${equippedGymId}`).then((res) => {
+    axios.get(`http://localhost:4000/api/equippedGym/${equippedGymId}`).then((res) => {
       console.log(res.data);
       setData(res.data)
     }).catch((error) => {

@@ -4,10 +4,20 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import { BsFillTelephoneFill, BsEnvelopeFill } from "react-icons/bs";
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 
 
 const Header = () => {
+
+    const navigate = useNavigate();
+    const loginToken = JSON.parse(localStorage.getItem('Token'));
+
+    const handleLogout = () => {
+        localStorage.removeItem('Token');
+        navigate('/login');
+    }
+
+
     return (
         <header>
             <nav className='navbar_1'>
@@ -26,9 +36,9 @@ const Header = () => {
                 <Navbar expand={"md"} className="navbar_2 mb-3">
                     <Container>
                         <Navbar.Brand href='/' className='fw-bold d-flex align-items-center fs-2 mx-2 brand_logo'>
-                            <span className='d-inline d-md-none'>ILIYA</span>
-                            <img src="/assets/images/gym_logo.png" className='d-none d-md-inline rounded-3 py-2' alt="" />
-                            FITNESS
+                            <a className='a_tag fs-1' href="/">F</a>
+                            <img src="/assets/images/gym_logo.png" className='d-none d-md-inline rounded-3 mx-1 py-2' alt="" />
+                            <a className='a_tag fs-1' href="/">ITNESS</a>
                         </Navbar.Brand>
                         <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-md`} className='bg-warning' />
                         <Navbar.Offcanvas
@@ -43,13 +53,19 @@ const Header = () => {
                                 </Offcanvas.Title>
                             </Offcanvas.Header>
                             <Offcanvas.Body className='navbar_2'>
-                                <Nav className="justify-content-end fw-semibold flex-grow-1">
+                                <Nav className="justify-content-end align-items-center fw-semibold flex-grow-1">
                                     <NavLink className='text-light a_tag fw-semibold ms-3' to="/contactus">تماس با ما</NavLink>
                                     <NavLink className='text-light a_tag fw-semibold ms-3' to="/blog">وبلاگ</NavLink>
                                     <NavLink className='text-light a_tag fw-semibold ms-3' to="/aboutus">درباره ما</NavLink>
                                     <NavLink className='text-light a_tag fw-semibold ms-3' to="/products">محصولات</NavLink>
                                     <NavLink className='text-light a_tag fw-semibold ms-3' to="/">خانه</NavLink>
-                                    <NavLink className='text-warning a_tag fw-bold ms-3' to="/login">ورود</NavLink>
+                                    {
+                                        loginToken ? (
+                                            <button onClick={handleLogout} className='btn btn-warning fw-bold ms-3'>خروج</button>
+                                        ) : (
+                                            <NavLink className='text-warning a_tag fw-bold ms-3' to="/login">ورود</NavLink>
+                                        )
+                                    }
                                 </Nav>
                             </Offcanvas.Body>
                         </Navbar.Offcanvas>

@@ -41,27 +41,19 @@ const SingleArticle = () => {
                     <div className="single_article">
                         <div className="container">
                             <div className='single_article_img '>
-                                <img src={`http://localhost:4000/` + data.article.imageUrl}
+                                <img src={`http://localhost:4000/` + data.article.imageUrl[0]}
                                     className='rounded-5' alt="" />
                             </div>
                             <div dir='rtl'>
                                 <div className="my-3 single_article_title">
-                                    <h3 className='fw-bold'>{data.article.title_1}</h3>
+                                    <h3 className='fw-bold'>{data.article.title}</h3>
                                 </div>
                                 <div className='my-3'>
                                     <p>نوشته شده توسط : {data.article.author}</p>
                                 </div>
                                 <div className='single_article_text'>
                                     <p className='fs-5 fw-semibold'>
-                                        {data.article.content_1}
-                                    </p>
-                                </div>
-                                <div className="single_article_title">
-                                    <h3 className='my-5 fw-bold'>{data.article.title_2}</h3>
-                                </div>
-                                <div className='single_article_text'>
-                                    <p className='fs-5 fw-semibold'>
-                                        {data.article.content_2}
+                                        {data.article.content}
                                     </p>
                                 </div>
                             </div>

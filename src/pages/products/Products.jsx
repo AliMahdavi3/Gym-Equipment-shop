@@ -4,6 +4,8 @@ import { FaWhatsappSquare } from "react-icons/fa";
 import Footer from '../../components/Footer';
 import ProductsSection from './ProductsSection';
 import GymCarousel from './equippedGym/GymCarousel';
+import { FaCartPlus } from "react-icons/fa";
+import { NavLink } from 'react-router-dom';
 
 const Products = () => {
 
@@ -40,7 +42,6 @@ const Products = () => {
             <div className="products_section">
                 <div className="container">
                     <div className='pb-5 d-flex justify-content-center align-items-center'>
-                        <button className='btn px-5 rounded-5 main_color_bg text-light fw-semibold'>جستجو</button>
                         <input type="text" className='form-control rounded-5 text-end pe-3 fw-semibold ms-3' placeholder='جستجوی محصول' />
                     </div>
                     <div className='d-flex justify-content-center main_products_div'>

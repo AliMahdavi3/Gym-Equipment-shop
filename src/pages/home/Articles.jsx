@@ -28,7 +28,7 @@ const Articles = () => {
                             data.map((d, index) => (
                                 <div key={index} className='col-12 col-md-6 my-3'>
                                     <div className="card text-bg-dark rounded-5 article_border">
-                                        <img src={'http://localhost:4000/' + d.imageUrl} className="card-img rounded-5" alt="article" />
+                                        <img src={'http://localhost:4000/' + d.imageUrl[0]} className="card-img rounded-5" alt="article" />
                                         <div dir='rtl' className="card-img-overlay rounded-5">
                                             <h5 className="fw-semibold card-title"><a className='a_tag text-light' href={`blog/${d._id}`}>{d.title_1}</a></h5>
                                             <p className="fw-medium main_article_content card-text"><a className='a_tag text-light' href={`blog/${d._id}`}>{d.content_1}</a></p>

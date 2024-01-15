@@ -18,6 +18,8 @@ const SingleProduct = () => {
         });
     }, [productId]);
 
+
+
     return (
         <>
             {/* Breadcrumb */}
@@ -66,8 +68,8 @@ const SingleProduct = () => {
                                         <li className='mx-2 fs-2 text-danger'><BsCircleFill /></li>
                                         <li className='mx-2 fs-2 text-secondary'><BsCircleFill /></li>
                                     </ul>
-                                    <button className='btn order_color_1 mb-2 mt-5 w-100 py-2 fw-semibold'>
-                                        <a className='a_tag text-dark' href="/">ثبت سفارش</a></button>
+                                    <button
+                                        className='btn order_color_1 mb-2 mt-5 w-100 py-2 fw-semibold'><a href="/products">ثبت سفارش</a></button>
                                     <button className='btn order_color_2 my-2 w-100 py-2 fw-semibold'>
                                         <a className='a_tag text-dark' href="/">تماس با پشتیبانی</a></button>
                                 </div>
