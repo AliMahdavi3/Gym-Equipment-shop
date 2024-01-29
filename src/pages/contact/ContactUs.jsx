@@ -1,6 +1,7 @@
 import React from 'react'
 import { BsInstagram, BsPhone, BsTelegram, BsTelephoneFill, BsWhatsapp } from 'react-icons/bs'
 import Footer from '../../components/Footer'
+import SendMessage from './SendMessage'
 
 const ContactUs = () => {
   return (
@@ -27,23 +28,7 @@ const ContactUs = () => {
       </div>
 
       {/* Contact-Form */}
-      <div className="contact_form py-5">
-        <div className="container">
-          <div className="row mt-5 px-3 py-5 rounded-5 form_shadow_2 d-flex justify-content-center align-items-center">
-            <div className="col-12 col-md-6 d-flex justify-content-center align-items-center">
-              <img className='w-75 border border-3 rounded-circle' src="/assets/images/mult (5).jpg" alt="" />
-            </div>
-            <div className="col-12 col-md-6 mt-4 flex-column d-flex">
-              <h5 className='text-center'>ثبت درخواست</h5>
-              <input className='text-end fw-semibold px-3 border border-0 rounded-3 mb-3 py-2 form_shadow' placeholder='ایمیل' type="text" name="" id="" />
-              <input className='text-end fw-semibold px-3 border border-0 rounded-3 mb-3 py-2 form_shadow' placeholder="نام کاربری" type="text" name="" id="" />
-              <textarea className='text-end fw-semibold px-3 border border-0 rounded-3 mb-3 py-2 form_shadow' placeholder="پیام" name="" id="" cols="30" rows="10"></textarea>
-              <button className='btn btn-primary rounded-5 text-light fw-bold'>ثبت</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
+      <SendMessage/>
 
       {/* Contact-Ways */}
       <div className="contact_ways py-5">

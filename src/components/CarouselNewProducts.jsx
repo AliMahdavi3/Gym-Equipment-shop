@@ -40,7 +40,7 @@ const CarouselNewProducts = ({ title }) => {
         <div className='multi_carousel pb-2'>
             <div className="container">
                 <div className='d-flex title_font pt-3 justify-content-between align-items-center'>
-                    <a className='a_tag fs-5 fw-bold' href="/">بیشتر</a>
+                    <a className='a_tag fs-5 fw-bold' href="/products">بیشتر</a>
                     <h2 className='fw-bold'>{title}</h2>
                 </div>
                 <Carousel className='py-3'
@@ -58,7 +58,7 @@ const CarouselNewProducts = ({ title }) => {
                             data.map((d, index) => (
                                 <div key={index} className='carousel_items my-3 mx-3 rounded-5 d-flex justify-content-center align-items-center'>
                                     <img className='w-100 my-2 rounded-5 ' src={'http://localhost:4000/' + d.imageUrl[0]} alt="" />
-                                    <a className='a_tag fs-5 fw-semibold main_color' href="/">{d.title}</a>
+                                    <a className='a_tag fs-5 fw-semibold main_color' href={`products/${d._id}`}>{d.title}</a>
                                     <p className='fw-semibold carousel_content'>{d.content}</p>
                                 </div>
                             )): null

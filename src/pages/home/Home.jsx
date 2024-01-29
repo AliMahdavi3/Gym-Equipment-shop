@@ -12,7 +12,7 @@ const Home = () => {
 
       {/* Landing Page */}
       <LandingPage className="home" title="ایلیافیتنس" secondTitle="تجهیزات بدنسازی" 
-      thirdTitle="بروزترین و با کیفیت ترین تجهیزات بدنسازی" button="محصولات"/>
+      thirdTitle="بروزترین و با کیفیت ترین تجهیزات بدنسازی" link='/products' button="محصولات"/>
 
       {/* Category */}
       <div className='d-block'>
@@ -85,7 +85,7 @@ const Home = () => {
                 رار گی
                 رد.
               </p>
-              <button className='btn btn-light rounded-3 shadow-lg'><a className='a_tag text-dark fw-semibold' href="/">مطالعه بیشتر</a></button>
+              <button className='btn btn-light rounded-3 shadow-lg'><a className='a_tag text-dark fw-semibold' href="/aboutus">مطالعه بیشتر</a></button>
             </div>
           </div>
         </div>
@@ -153,7 +153,7 @@ const Home = () => {
             </div>
             <div className='text-center col-12 col-md-6 col-lg-4'>
               <h5 className='fw-semibold pb-2 main_color'>30 سال ضمانت پس از فروش</h5>
-              <h6 className='fw-semibold'>ضمانت و گارانتی دستکاه ها تا 5 سال</h6>
+              <h6 className='fw-semibold'>ضمانت و گارانتی تمامی دستگاه ها</h6>
             </div>
           </div>
 

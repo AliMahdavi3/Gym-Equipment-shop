@@ -31,7 +31,7 @@ h3 {
   background-color: #242B31;
   position: fixed;
   top: 0;
-  z-index: 100;
+  z-index: 1000;
 }
 
 .main_navbar {
@@ -81,6 +81,9 @@ h3 {
   text-decoration: none;
 }
 
+.pointer {
+  cursor: pointer;
+}
 
 /* =================================Custom Scrollbars============================ */
 ::-webkit-scrollbar {
@@ -197,6 +200,12 @@ h3 {
   width: 100%;
   height: 100%;
   border-bottom: 10px solid #d4531b;
+  z-index: 0;
+}
+
+.equipped_gym_car {
+  height: 3rem;
+  overflow: hidden;
 }
 
 .carousel_items {
@@ -241,7 +250,7 @@ h3 {
   border-bottom: 10px solid #d4531b;
 }
 
-.article_border .card-img-overlay{
+.article_border .card-img-overlay {
   background-color: hsl(180, 4%, 5%, 0.4);
   border: 5px solid #EE7505;
 }
@@ -388,12 +397,16 @@ h3 {
 .more_view_products {
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
   height: 100%;
-  width: 25%;
+  width: 100%;
   background-color: #FFFFFF;
 }
 
 .products {
-  width: 75%;
+  width: 70%;
+}
+
+.main_products_div {
+  width: 20%;
 }
 
 .products_card {
@@ -421,6 +434,12 @@ h3 {
 @media screen and (max-width:800px) {
   .main_products_div {
     flex-direction: column;
+    width: 100%;
+  }
+
+  .main_product_column {
+    flex-direction: column;
+    align-items: center;
   }
 
   .more_view_products {
@@ -729,7 +748,7 @@ h3 {
 }
 
 .new_article_card {
-  border: 5px solid #CD7651;
+  border: 5px solid #f37e30;
 }
 
 .blog_category li {
@@ -771,6 +790,11 @@ h3 {
   display: flex;
   align-items: end;
   flex-direction: column;
+  border-bottom: 5px solid #802903;
+}
+
+.comments_list {
+  border-bottom: 5px solid #802903;
 }
 
 .comments_form_inputs input::placeholder,

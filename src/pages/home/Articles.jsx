@@ -1,4 +1,5 @@
 import axios from 'axios';
+import moment from 'moment-jalaali';
 import React, { useEffect, useState } from 'react'
 
 const Articles = () => {
@@ -19,7 +20,7 @@ const Articles = () => {
         <div className="article pt-3 pb-5">
             <div className="container">
                 <div className='d-flex title_font pt-3 justify-content-between align-items-center'>
-                    <a className='a_tag fs-5 fw-bold' href="/">بیشتر</a>
+                    <a className='a_tag fs-5 fw-bold' href="/blog">بیشتر</a>
                     <h2 className='fw-bold'>مقالات وبسایت</h2>
                 </div>
                 <div className="row">
@@ -30,9 +31,9 @@ const Articles = () => {
                                     <div className="card text-bg-dark rounded-5 article_border">
                                         <img src={'http://localhost:4000/' + d.imageUrl[0]} className="card-img rounded-5" alt="article" />
                                         <div dir='rtl' className="card-img-overlay rounded-5">
-                                            <h5 className="fw-semibold card-title"><a className='a_tag text-light' href={`blog/${d._id}`}>{d.title_1}</a></h5>
-                                            <p className="fw-medium main_article_content card-text"><a className='a_tag text-light' href={`blog/${d._id}`}>{d.content_1}</a></p>
-                                            <p className="fw-medium card-text"><small>{d.createdAt}</small></p>
+                                            <h5 className="fw-semibold card-title"><a className='a_tag text-light' href={`blog/${d._id}`}>{d.title}</a></h5>
+                                            <p className="fw-medium main_article_content card-text"><a className='a_tag text-light' dangerouslySetInnerHTML={{__html: d.value}} href={`blog/${d._id}`}></a></p>
+                                            <p className="fw-medium card-text"><small>{moment(d.createdAt).format('jYYYY/jMM/jDD HH:mm:ss')}</small></p>
                                         </div>
                                     </div>
                                 </div>

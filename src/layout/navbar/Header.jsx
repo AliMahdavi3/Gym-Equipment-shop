@@ -52,7 +52,7 @@ const Header = () => {
                                     ILIYAFITNESS
                                 </Offcanvas.Title>
                             </Offcanvas.Header>
-                            <Offcanvas.Body className='navbar_2'>
+                            <Offcanvas.Body className='link_nav'>
                                 <Nav className="justify-content-end align-items-center fw-semibold flex-grow-1">
                                     <NavLink className='text-light a_tag fw-semibold ms-3' to="/contactus">تماس با ما</NavLink>
                                     <NavLink className='text-light a_tag fw-semibold ms-3' to="/blog">وبلاگ</NavLink>

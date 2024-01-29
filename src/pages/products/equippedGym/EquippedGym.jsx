@@ -22,8 +22,8 @@ const EquippedGym = () => {
     <>
       {
         !data ? (
-          <div>.....................</div>
-        ) : (
+          <h1 className='text-center mt-5 fw-bold'>درحال بارگذاری....!</h1>
+          ) : (
           <div className='equipped_gym'>
             <div className="container">
               <h1>باشگاه تجهیزشده <span className='main_color fw-semibold'>{data.equippedGym.title}</span></h1>

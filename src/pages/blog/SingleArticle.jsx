@@ -2,10 +2,16 @@ import React, { useEffect, useState } from 'react'
 import Footer from '../../components/Footer'
 import { useParams } from 'react-router-dom'
 import axios from 'axios';
+import swal from 'sweetalert';
 
 const SingleArticle = () => {
     let { articleId } = useParams();
     const [data, setData] = useState(null);
+    const [comment, setComment] = useState([]);
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [content, setContent] = useState('');
+
     console.log(articleId);
 
     useEffect(() => {
@@ -17,30 +23,58 @@ const SingleArticle = () => {
         });
     }, [articleId]);
 
+    useEffect(() => {
+        axios.get('http://localhost:4000/api/comments').then((res) => {
+            console.log(res.data.comments);
+            setComment(res.data.comments)
+        }).catch((error) => {
+            console.log(error.message);
+        })
+    }, [])
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        const formData = new FormData();
+        formData.append('email', email);
+        formData.append('name', name);
+        formData.append('content', content);
+
+        try {
+
+            const res = await axios.post('http://localhost:4000/api/comment', formData, {
+                headers: {
+                    'Content-Type': 'multipart/form-data',
+                }
+            });
+            swal({
+                title: "عملیات موفقیت آمیز بود",
+                text: "!دیدگاه ارسال شد",
+                icon: "success",
+                button: "متوجه شدم",
+            }).then(() => {
+                window.location.reload()
+            });
+            console.log(res.data);
+        } catch (error) {
+            swal({
+                title: "خطایی رخ داده!",
+                text: error.message,
+                icon: "warning",
+                button: "متوجه شدم",
+            });
+            console.log(error.message);
+        }
+    }
+
     return (
         <>
-            {/* Breadcrumb */}
-            <div className='breadcrumb'>
-                <div className="container">
-                    <div>
-                        <nav dir='rtl' className='breadcrumb pt-3' aria-label="breadcrumb">
-                            <ol className="breadcrumb">
-                                <li className="fw-semibold breadcrumb-item ms-2"><a className='a_tag ms-2' href="/products/singleproduct">وبلاگ</a>/</li>
-                                <li className="fw-semibold breadcrumb-item"><a className='a_tag' href="/products/singleproduct">مقالات</a></li>
-                                <li className="fw-semibold breadcrumb-item active" aria-current="page">مقاله بدنسازی</li>
-                            </ol>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-
             {
                 !data ? (
-                    <div>...................</div>
+                    <h1 className='text-center mt-5 fw-bold'>درحال بارگذاری....!</h1>
                 ) : (
-                    <div className="single_article">
-                        <div className="container">
-                            <div className='single_article_img '>
+                    <div className="single_article pt-5">
+                        <div className="container pt-5">
+                            <div className='single_article_img pt-5'>
                                 <img src={`http://localhost:4000/` + data.article.imageUrl[0]}
                                     className='rounded-5' alt="" />
                             </div>
@@ -52,9 +86,8 @@ const SingleArticle = () => {
                                     <p>نوشته شده توسط : {data.article.author}</p>
                                 </div>
                                 <div className='single_article_text'>
-                                    <p className='fs-5 fw-semibold'>
-                                        {data.article.content}
-                                    </p>
+                                    <p dangerouslySetInnerHTML={{ __html: data.article.value }}
+                                        className='fs-5 fw-semibold'></p>
                                 </div>
                             </div>
                         </div>
@@ -62,33 +95,41 @@ const SingleArticle = () => {
                 )
             }
 
-            {/* Tabs */}
-            <div className="article_tab py-5 container">
-                <ul className="nav nav-pills">
-                    <li className="nav-item me-2 btn btn-secondary rounded-5">
-                        <a className="nav-link a_tag text-light fw-semibold" href="/">Active</a>
-                    </li>
-                    <li className="nav-item me-2 btn btn-secondary rounded-5">
-                        <a className="nav-link a_tag text-light fw-semibold" href="/">Link</a>
-                    </li>
-                    <li className="nav-item me-2 btn btn-secondary rounded-5">
-                        <a className="nav-link a_tag text-light fw-semibold" href="/">Link</a>
-                    </li>
-                </ul>
-            </div>
-
             {/* Form */}
-            <div className="comments_form">
+            <div className="comments_form pb-5">
                 <div className="container">
                     <h3 className='my-5 text-center'>ارسال دیدگاه خود برای این مقاله</h3>
-                    <div className='comments_form_inputs'>
-                        <input className='w-50 my-3 border border-0 rounded-4 bg-secondary text-light px-3 py-2' type="text" name="" placeholder='ایمیل' id="" />
-                        <input className='w-50 my-3 border border-0 rounded-4 bg-secondary text-light px-3 py-2' type="text" name="" placeholder='نام کاربری' id="" />
-                        <textarea className='w-75 my-3 border border-0 rounded-4 bg-secondary text-light px-3 py-2' type="text" name="" placeholder='نظر' id="" />
-                        <button className='btn btn-warning rounded-5 my-4 px-5'>ارسال نظر</button>
-                    </div>
+                    <form className='comments_form_inputs' onSubmit={handleSubmit}>
+                        <input className='w-50 my-3 border border-0 rounded-4 bg-secondary text-light px-3 py-2'
+                            type="text" name="email" placeholder='ایمیل' id=""
+                            value={email} onChange={(e) => setEmail(e.target.value)} />
+                        <input className='w-50 my-3 border border-0 rounded-4 bg-secondary text-light px-3 py-2'
+                            type="text" name="name" placeholder='نام کاربری' id=""
+                            value={name} onChange={(e) => setName(e.target.value)} />
+                        <textarea className='text-end w-75 my-3 border border-0 rounded-4 bg-secondary text-light px-3 py-2'
+                            name="content" placeholder='نظر' id=""
+                            value={content} onChange={(e) => setContent(e.target.value)} />
+                        <button className='btn btn-warning rounded-5 my-4 px-5' type="submit">ارسال نظر</button>
+                    </form>
                 </div>
             </div>
+
+            <div className="container">
+                <div>
+                    {
+                        Array.isArray(comment) ?
+                            comment.map((d, index) => (
+                                <ul key={index} className="list-unstyled">
+                                    <li className='comments_list py-3'>
+                                        <p className='text-end'>{d.name}</p>
+                                        <p className='text-end'>{d.content}</p>
+                                    </li>
+                                </ul>
+                            )) : null
+                    }
+                </div>
+            </div>
+
 
             {/* Footer */}
             <Footer />

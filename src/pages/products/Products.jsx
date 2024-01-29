@@ -1,15 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { BsInstagram, BsTelegram } from 'react-icons/bs'
 import { FaWhatsappSquare } from "react-icons/fa";
 import Footer from '../../components/Footer';
 import ProductsSection from './ProductsSection';
 import GymCarousel from './equippedGym/GymCarousel';
-import { FaCartPlus } from "react-icons/fa";
-import { NavLink } from 'react-router-dom';
+import Category from './Category';
 
 const Products = () => {
+    const [selectedCategory, setSelectedCategory] = useState('All');
+    const [searchTerm, setSearchTerm] = useState('');
 
-    
+
+    const handleCategorySelect = (category) => {
+        setSelectedCategory(category);
+    }
 
     return (
         <>
@@ -36,48 +40,23 @@ const Products = () => {
             </div>
 
             {/* Slider */}
-           <GymCarousel/>
+            <GymCarousel />
 
             {/* Products-Section */}
             <div className="products_section">
                 <div className="container">
+                    {/* search-box */}
                     <div className='pb-5 d-flex justify-content-center align-items-center'>
-                        <input type="text" className='form-control rounded-5 text-end pe-3 fw-semibold ms-3' placeholder='جستجوی محصول' />
+                        <input type="text" 
+                        onChange={(e) => setSearchTerm(e.target.value)}
+                        className='form-control rounded-5 text-end pe-3 fw-semibold ms-3' placeholder='جستجوی محصول' />
                     </div>
-                    <div className='d-flex justify-content-center main_products_div'>
-                        <div className='more_view_products text-center py-4 mb-5 rounded-4'>
-                            <h6 className='fw-bold'>دستگاه بندسازی بانوان</h6>
-                            <hr />
-                            <ul className="list-unstyled">
-                                <li className='mb-3'><a className='a_tag text-dark' href="/">دستگاه بندسازی بانوان</a></li>
-                                <li className='mb-3'><a className='a_tag text-dark' href="/">دستگاه بندسازی بانوان</a></li>
-                                <li className='mb-3'><a className='a_tag text-dark' href="/">دستگاه بندسازی بانوان</a></li>
-                                <li className='mb-3'><a className='a_tag text-dark' href="/">دستگاه بندسازی بانوان</a></li>
-                                <li className='mb-3'><a className='a_tag text-dark' href="/">دستگاه بندسازی بانوان</a></li>
-                                <li className='mb-3'><a className='a_tag text-dark' href="/">دستگاه بندسازی بانوان</a></li>
-                            </ul>
-                        </div>
-                        <ProductsSection/>
+
+                    <div className='main_product_column d-flex align-items-start justify-content-center'>
+                        <Category onCategorySelect={handleCategorySelect} />
+                        <ProductsSection selectedCategory={selectedCategory} searchTerm={searchTerm}/>
                     </div>
-                    <div className='d-flex justify-content-center align-items-center'>
-                        <nav aria-label="Page navigation example">
-                            <ul className="pagination">
-                                <li className="page-item">
-                                    <a className="page-link" href="/" aria-label="Previous">
-                                        <span aria-hidden="true">&laquo;</span>
-                                    </a>
-                                </li>
-                                <li className="page-item"><a className="page-link" href="/">1</a></li>
-                                <li className="page-item"><a className="page-link" href="/">2</a></li>
-                                <li className="page-item"><a className="page-link" href="/">3</a></li>
-                                <li className="page-item">
-                                    <a className="page-link" href="/" aria-label="Next">
-                                        <span aria-hidden="true">&raquo;</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
+                  
                 </div>
             </div>
 

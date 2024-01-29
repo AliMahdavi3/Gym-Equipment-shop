@@ -22,28 +22,13 @@ const SingleProduct = () => {
 
     return (
         <>
-            {/* Breadcrumb */}
-            <div className='breadcrumb'>
-                <div className="container">
-                    <div>
-                        <nav dir='rtl' className='breadcrumb pt-3' aria-label="breadcrumb">
-                            <ol className="breadcrumb">
-                                <li className="fw-semibold breadcrumb-item ms-2"><a className='a_tag ms-2' href="/products/singleproduct">محصولات</a>/</li>
-                                <li className="fw-semibold breadcrumb-item"><a className='a_tag' href="/products/singleproduct">بدنسازی</a></li>
-                                <li className="fw-semibold breadcrumb-item active" aria-current="page">دستگاه هالتر</li>
-                            </ol>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-
             {/* Single-Product */}
             {
                 !data ? (
-                    <div>.................</div>
+                    <h1 className='text-center mt-5 fw-bold'>درحال بارگذاری....!</h1>
                 ) : (
                     <div className="singleProduct py-5">
-                        <div className="container">
+                        <div className="container pt-5">
                             <div className="row d-flex pb-5 singleProduct_container justify-content-center align-items-center">
                                 <div className="col-12 col-md-6 d-flex align-items-center flex-column">
                                     <div className='w-100 mt-2 mb-4 d-flex justify-content-center align-items-center'>
@@ -69,7 +54,8 @@ const SingleProduct = () => {
                                         <li className='mx-2 fs-2 text-secondary'><BsCircleFill /></li>
                                     </ul>
                                     <button
-                                        className='btn order_color_1 mb-2 mt-5 w-100 py-2 fw-semibold'><a href="/products">ثبت سفارش</a></button>
+                                        className='btn order_color_1 mb-2 mt-5 w-100 py-2 fw-semibold'>
+                                            <a className="text-dark a_tag" href="/products">ثبت سفارش</a></button>
                                     <button className='btn order_color_2 my-2 w-100 py-2 fw-semibold'>
                                         <a className='a_tag text-dark' href="/">تماس با پشتیبانی</a></button>
                                 </div>

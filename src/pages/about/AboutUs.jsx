@@ -1,14 +1,15 @@
 import React from 'react'
-import Accordion from 'react-bootstrap/Accordion';
 import Footer from '../../components/Footer';
 import LandingPage from '../../components/LandingPage';
+import Question from './Question';
 
 const AboutUs = () => {
     return (
         <>
             {/* Landing Page */}
             <LandingPage dir="rtl" className="about" title="ایلیافیتنس" 
-            secondTitle="درباره" thirdTitle="گارانتی محصولات , خدمات و پشتیبانی" button="مشاهده بیشتر" />
+            secondTitle="درباره" thirdTitle="گارانتی محصولات , خدمات و پشتیبانی" 
+            link='/products' button="محصولات" />
 
             {/* About us */}
             <div className="about_us_page py-5">
@@ -59,13 +60,13 @@ const AboutUs = () => {
                     <div className="row services_about_content_main">
                         <div className="services_about_content mt-5">
                             <img className='w-75' src="/assets/images/services (2).png" alt="" />
-                            <h5 className='mt-4'>قیمت مناسب</h5>
-                            <p>تضمین قیمت مناسب برای راه اندازی باشگاه</p>
+                            <h5 className='mt-4'>کیفیت عالی</h5>
+                            <p>کیفیت عالی محصولات همراه خدمات پس از فروش</p>
                         </div>
                         <div className="services_about_content">
                             <img src="/assets/images/services (1).png" alt="" />
-                            <h5>قیمت مناسب</h5>
-                            <p>تضمین قیمت مناسب برای راه اندازی باشگاه</p>
+                            <h5>گارانتی</h5>
+                            <p>گارانتی و ضمانت محصولات</p>
                         </div>
 
                         <div className="services_about_content mt-2">
@@ -78,137 +79,7 @@ const AboutUs = () => {
             </div>
 
             {/* Common-Questions */}
-            <div className="common_questions">
-                <div className="container">
-                    <div className="common_questions_title">
-                        <h2 className='text-center py-5'>سوالات متداول</h2>
-                    </div>
-                    <div>
-                        <Accordion defaultActiveKey={['0']}>
-                            <Accordion.Item className='mb-3 rounded-5' eventKey="0">
-                                <Accordion.Header>بهترین دستگاه برای تمرین در منزل</Accordion.Header>
-                                <Accordion.Body className='rounded-5 fw-semibold fs-5'>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                                    minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                                    aliquip ex ea commodo consequat. Duis aute irure dolor in
-                                    reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                                    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                                    culpa qui officia deserunt mollit anim id est laborum.
-                                </Accordion.Body>
-                            </Accordion.Item>
-                            <Accordion.Item className='mb-3 rounded-5' eventKey="1">
-                                <Accordion.Header>بهترین دستگاه برای تمرین در منزل</Accordion.Header>
-                                <Accordion.Body className='rounded-5 fw-semibold fs-5'>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                                    minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                                    aliquip ex ea commodo consequat. Duis aute irure dolor in
-                                    reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                                    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                                    culpa qui officia deserunt mollit anim id est laborum.
-                                </Accordion.Body>
-                            </Accordion.Item>
-                            <Accordion.Item className='mb-3 rounded-5' eventKey="2">
-                                <Accordion.Header>بهترین دستگاه برای تمرین در منزل</Accordion.Header>
-                                <Accordion.Body className='rounded-5 fw-semibold fs-5'>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                                    minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                                    aliquip ex ea commodo consequat. Duis aute irure dolor in
-                                    reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                                    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                                    culpa qui officia deserunt mollit anim id est laborum.
-                                </Accordion.Body>
-                            </Accordion.Item>
-                            <Accordion.Item className='mb-3 rounded-5' eventKey="3">
-                                <Accordion.Header>بهترین دستگاه برای تمرین در منزل</Accordion.Header>
-                                <Accordion.Body className='rounded-5 fw-semibold fs-5'>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                                    minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                                    aliquip ex ea commodo consequat. Duis aute irure dolor in
-                                    reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                                    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                                    culpa qui officia deserunt mollit anim id est laborum.
-                                </Accordion.Body>
-                            </Accordion.Item>
-                            <Accordion.Item className='mb-3 rounded-5' eventKey="4">
-                                <Accordion.Header>بهترین دستگاه برای تمرین در منزل</Accordion.Header>
-                                <Accordion.Body className='rounded-5 fw-semibold fs-5'>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                                    minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                                    aliquip ex ea commodo consequat. Duis aute irure dolor in
-                                    reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                                    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                                    culpa qui officia deserunt mollit anim id est laborum.
-                                </Accordion.Body>
-                            </Accordion.Item>
-                            <Accordion.Item className='mb-3 rounded-5' eventKey="5">
-                                <Accordion.Header>بهترین دستگاه برای تمرین در منزل</Accordion.Header>
-                                <Accordion.Body className='rounded-5 fw-semibold fs-5'>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                                    minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                                    aliquip ex ea commodo consequat. Duis aute irure dolor in
-                                    reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                                    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                                    culpa qui officia deserunt mollit anim id est laborum.
-                                </Accordion.Body>
-                            </Accordion.Item>
-                            <Accordion.Item className='mb-3 rounded-5' eventKey="6">
-                                <Accordion.Header>بهترین دستگاه برای تمرین در منزل</Accordion.Header>
-                                <Accordion.Body className='rounded-5 fw-semibold fs-5'>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                                    minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                                    aliquip ex ea commodo consequat. Duis aute irure dolor in
-                                    reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                                    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                                    culpa qui officia deserunt mollit anim id est laborum.
-                                </Accordion.Body>
-                            </Accordion.Item>
-                            <Accordion.Item className='mb-3 rounded-5' eventKey="7">
-                                <Accordion.Header>بهترین دستگاه برای تمرین در منزل</Accordion.Header>
-                                <Accordion.Body className='rounded-5 fw-semibold fs-5'>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                                    minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                                    aliquip ex ea commodo consequat. Duis aute irure dolor in
-                                    reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                                    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                                    culpa qui officia deserunt mollit anim id est laborum.
-                                </Accordion.Body>
-                            </Accordion.Item>
-                            <Accordion.Item className='mb-3 rounded-5' eventKey="8">
-                                <Accordion.Header>بهترین دستگاه برای تمرین در منزل</Accordion.Header>
-                                <Accordion.Body className='rounded-5 fw-semibold fs-5'>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                                    minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                                    aliquip ex ea commodo consequat. Duis aute irure dolor in
-                                    reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                                    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                                    culpa qui officia deserunt mollit anim id est laborum.
-                                </Accordion.Body>
-                            </Accordion.Item>
-                            <Accordion.Item className='mb-3 rounded-5' eventKey="9">
-                                <Accordion.Header>بهترین دستگاه برای تمرین در منزل</Accordion.Header>
-                                <Accordion.Body className='rounded-5 fw-semibold fs-5'>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                                    minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                                    aliquip ex ea commodo consequat. Duis aute irure dolor in
-                                    reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                                    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                                    culpa qui officia deserunt mollit anim id est laborum.
-                                </Accordion.Body>
-                            </Accordion.Item>
-                        </Accordion>
-                    </div>
-                </div>
-            </div>
+            <Question/>
 
 
             {/* Footer */}
