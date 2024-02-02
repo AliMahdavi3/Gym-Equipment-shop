@@ -1,5 +1,5 @@
 import React from 'react'
-import { BsInstagram, BsTelegram, BsWhatsapp } from 'react-icons/bs'
+import Icons from './Icons'
 
 const LandingPage = ({ className, title, link, secondTitle, thirdTitle, button, dir }) => {
     return (
@@ -12,17 +12,7 @@ const LandingPage = ({ className, title, link, secondTitle, thirdTitle, button, 
                     <button className='btn btn-light rounded-5 mt-4 px-3 border border-4 border-danger fw-semibold'>
                         <a className='a_tag text-dark' href={link}>{button}</a></button>
                 </div>
-                <div className='main_icon'>
-                    <a className='a_tag fs-1 main_color ms-3' href="/">
-                        <BsTelegram />
-                    </a>
-                    <a className='a_tag fs-1 main_color ms-3' href="/">
-                        <BsInstagram />
-                    </a>
-                    <a className='a_tag fs-1 main_color ms-3' href="/">
-                        <BsWhatsapp />
-                    </a>
-                </div>
+                <Icons />
             </div>
         </div>
     )

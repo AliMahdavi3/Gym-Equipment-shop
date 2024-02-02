@@ -853,6 +853,7 @@ h3 {
 .contact_ways {
   background-color: #B1B1B1;
   border-bottom: 10px solid #c54109;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 700px) {

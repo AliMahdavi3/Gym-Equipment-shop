@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
-import { BsInstagram, BsTelegram } from 'react-icons/bs'
-import { FaWhatsappSquare } from "react-icons/fa";
+import { FaInstagram, FaTelegram, FaWhatsappSquare } from "react-icons/fa";
 import Footer from '../../components/Footer';
 import ProductsSection from './ProductsSection';
 import GymCarousel from './equippedGym/GymCarousel';
@@ -26,13 +25,13 @@ const Products = () => {
                         <h3 className='text-warning'>برای باشگاه و منزل</h3>
                     </div>
                     <div className='main_icon_products'>
-                        <a className='a_tag fs-1 text-info ms-3' href="/">
-                            <BsTelegram />
+                        <a className='a_tag fs-1 text-info ms-3' href="https://t.me/+989331070565">
+                            <FaTelegram />
                         </a>
-                        <a className='a_tag fs-1 main_color ms-3' href="/">
-                            <BsInstagram />
+                        <a className='a_tag fs-1 main_color ms-3' href="https://www.instagram.com/iliyafitness1/">
+                            <FaInstagram />
                         </a>
-                        <a className='a_tag fs-1 text-dark ms-3' href="/">
+                        <a className='a_tag fs-1 text-dark ms-3' href="https://wa.me/+989331070565">
                             <FaWhatsappSquare />
                         </a>
                     </div>

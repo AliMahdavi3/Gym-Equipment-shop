@@ -70,7 +70,11 @@ const SingleArticle = () => {
         <>
             {
                 !data ? (
-                    <h1 className='text-center mt-5 fw-bold'>درحال بارگذاری....!</h1>
+                    <div className='pt-5'>
+                        <div className="pt-5">
+                            <h1 className='text-center pt-5 fw-bold'>درحال بارگذاری....!</h1>
+                        </div>
+                    </div>
                 ) : (
                     <div className="single_article pt-5">
                         <div className="container pt-5">

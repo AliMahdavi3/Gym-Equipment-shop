@@ -22,13 +22,15 @@ const Header = () => {
         <header>
             <nav className='navbar_1'>
                 <div className="container d-flex justify-content-between align-items-center">
-                    <a href="/" className='text-decoration-none mt-1 text-light d-flex align-items-center'>
-                        <BsEnvelopeFill className='mx-2 ' />
-                        alimahdavi30000@gmail.com
+                    <a href="mailto:iliyafitness@gmail.com" className='text-decoration-none pt-2
+                     text-light d-flex align-items-center'>
+                        <BsEnvelopeFill className='mx-2 pb-1' />
+                        iliyafitness@gmail.com
                     </a>
-                    <a href="/" className='text-decoration-none mt-1 text-light d-flex align-items-center'>
-                        <BsFillTelephoneFill className='mx-2 ' />
-                        09012559469
+                    <a href="tel:+989331070565" className='text-decoration-none pt-2
+                     text-light d-flex align-items-center'>
+                        <BsFillTelephoneFill className='mx-2 pb-1' />
+                        احمدی:09331070565
                     </a>
                 </div>
             </nav>

@@ -39,7 +39,8 @@ const CarouselNewProducts = ({ title }) => {
     return (
         <div className='multi_carousel pb-2'>
             <div className="container">
-                <div className='d-flex title_font pt-3 justify-content-between align-items-center'>
+                <div className='d-flex title_font pt-3 justify-content-between 
+                align-items-center'>
                     <a className='a_tag fs-5 fw-bold' href="/products">بیشتر</a>
                     <h2 className='fw-bold'>{title}</h2>
                 </div>
