@@ -6,16 +6,18 @@ const SendMessage = () => {
     const [name, setName] = useState('');
     const [content, setContent] = useState('');
     const [phoneNumber, setPhoneNumber] = useState('');
+    const [isSubmitting, setIsSubmitting] = useState(false);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        setIsSubmitting(true);
         const formData = new FormData();
         formData.append('name', name);
         formData.append('content', content);
         formData.append('phoneNumber', phoneNumber);
 
         try {
-            const res = await axios.post('http://localhost:4000/api/sendMessage', formData, {
+            const res = await axios.post('https://api.iliyafitness.com/api/sendMessage', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                 }
@@ -54,8 +56,11 @@ const SendMessage = () => {
                             <input value={name} onChange={(e) => setName(e.target.value)} className='text-end w-100 fw-semibold px-3 border border-0 rounded-3 mb-3 py-2 form_shadow' placeholder='نام' type="text" name="" id="" />
                             <input value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} className='text-end w-100 fw-semibold px-3 border border-0 rounded-3 mb-3 py-2 form_shadow' placeholder="شماره تلفن" type="text" name="" id="" />
                             <textarea value={content} onChange={(e) => setContent(e.target.value)} className='text-end w-100 fw-semibold px-3 border border-0 rounded-3 mb-3 py-2 form_shadow' placeholder="پیام" name="" id="" cols="30" rows="10"></textarea>
-                            <button type='submit' className='btn btn-primary w-100 
-                                    rounded-5 text-light fw-bold'>ثبت</button>
+                            <div className="submit_btn mt-3 mb-5">
+                                <button type='submit'
+                                    className='btn btn-primary px-3 mx-2' disabled={isSubmitting}>
+                                    {isSubmitting ? 'لطفا صبر کنید...' : 'ثبت'}</button>
+                            </div>
                         </form>
                     </div>
                 </div>

@@ -10,7 +10,7 @@ export const initialValues = {
 
 export const onSubmit = async (values, action, setRegistered, navigate) => {
     console.log(values);
-    axios.post('http://localhost:4000/auth/register', values, {
+    axios.post('https://api.iliyafitness.com/auth/register', values, {
         headers: {
             'Content-Type': 'application/json',
         },

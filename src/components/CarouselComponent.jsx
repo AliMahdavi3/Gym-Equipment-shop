@@ -7,7 +7,7 @@ const CarouselComponent = ({ title }) => {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:4000/api/bestSellings').then((res) => {
+        axios.get('https://api.iliyafitness.com/api/bestSellings').then((res) => {
             console.log(res.data.bestSellings);
             setData(res.data.bestSellings)
         }).catch((error) => {
@@ -44,18 +44,18 @@ const CarouselComponent = ({ title }) => {
                 <Carousel className='py-3'
                     showDots={true}
                     responsive={responsive}
-                    ssr={true} // means to render carousel on server-side.
+                    ssr={true}
                     infinite={true}
                     autoPlay={true}
-                    autoPlaySpeed={2000}
+                    autoPlaySpeed={1000}
                     customTransition="all 2s"
-                    transitionDuration={2000}
+                    transitionDuration={1000}
                     removeArrowOnDeviceType={["tablet", "mobile"]}>
                     {
                         Array.isArray(data) ?
                             data.map((d, index) => (
                                 <div key={index} className='carousel_items my-3 mx-3 rounded-5 d-flex justify-content-center align-items-center'>
-                                    <img className='w-100 my-2 rounded-5 ' src={'http://localhost:4000/' + d.imageUrl[0]} alt="" />
+                                    <img className='w-100 my-2 rounded-5 ' src={'https://api.iliyafitness.com/' + d.imageUrl[0]} alt="images" />
                                     <a className='a_tag fs-5 fw-semibold main_color' href='/products'>{d.title}</a>
                                     <p className='fw-semibold carousel_content'>{d.content}</p>
                                 </div>

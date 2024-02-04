@@ -1,13 +1,12 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import Accordion from 'react-bootstrap/Accordion';
-import { BsHandIndexThumbFill } from 'react-icons/bs';
 
 const Question = () => {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:4000/api/questions').then((res) => {
+        axios.get('https://api.iliyafitness.com/api/questions').then((res) => {
             console.log(res.data.questions);
             setData(res.data.questions);
         }).catch((error) => {

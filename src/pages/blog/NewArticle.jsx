@@ -5,7 +5,7 @@ import moment from 'moment-jalaali';
 const NewArticle = () => {
   const [data, setData] = useState(null);
   useEffect(() => {
-    axios.get(`http://localhost:4000/api/articles`).then((res) => {
+    axios.get(`https://api.iliyafitness.com/api/articles`).then((res) => {
       console.log(res.data.articles);
       const lastIndex = res.data.articles.length - 1;
       setData(res.data.articles[lastIndex]);
@@ -23,7 +23,7 @@ const NewArticle = () => {
             <div className="card mb-3 rounded-5 new_article_card">
               <div className="row" style={{ "height": "100%" }}>
                 <div className="col-md-5" style={{ "height": "100%" }}>
-                  <img src={`http://localhost:4000/` + data.imageUrl[0]}
+                  <img src={`https://api.iliyafitness.com/` + data.imageUrl[0]}
                     style={{ "height": "500px" }}
                     className="new_article_card img-fluid rounded-4" alt="..." />
                 </div>

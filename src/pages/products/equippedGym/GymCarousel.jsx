@@ -6,7 +6,7 @@ const GymCarousel = () => {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:4000/api/equippedGyms').then((res) => {
+        axios.get('https://api.iliyafitness.com/api/equippedGyms').then((res) => {
             console.log(res.data.equippedGyms);
             setData(res.data.equippedGyms);
         }).catch((error) => {
@@ -23,7 +23,7 @@ const GymCarousel = () => {
                         Array.isArray(data) ?
                             data.map((d, index) => (
                                 <Carousel.Item key={index} className='product_carousel' interval={2000}>
-                                    <a href={`products/gymCarousel/${d._id}`}><img src={'http://localhost:4000/' + d.imageUrl[0]} alt="" /></a>
+                                    <a href={`products/gymCarousel/${d._id}`}><img src={'https://api.iliyafitness.com/' + d.imageUrl[0]} alt="" /></a>
                                     <Carousel.Caption>
                                         <a href={`products/gymCarousel/${d._id}`} className='a_tag text-light fs-2 text_shadow_products'>{d.title}</a>
                                         <p className='text_shadow_products equipped_gym_car'>{d.content}</p>

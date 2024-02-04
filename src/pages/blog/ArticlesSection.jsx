@@ -8,7 +8,7 @@ const ArticlesSection = () => {
     const [articlesPerPage] = useState(6);
 
     useEffect(() => {
-        axios.get('http://localhost:4000/api/articles').then((res) => {
+        axios.get('https://api.iliyafitness.com/api/articles').then((res) => {
             console.log(res.data.articles);
             setData(res.data.articles);
         }).catch((error) => {
@@ -36,7 +36,7 @@ const ArticlesSection = () => {
                             currentArticles.map((d, index) => (
                                 <div key={index} className='col-12 col-md-6 my-3'>
                                     <div className="card text-bg-dark rounded-5 article_border">
-                                        <img src={'http://localhost:4000/' + d.imageUrl[0]}
+                                        <img src={'https://api.iliyafitness.com/' + d.imageUrl[0]}
                                             className="card-img rounded-5" alt="article" />
                                         <div className="card-img-overlay rounded-5 text-end">
                                             <h5 className="fw-semibold card-title">

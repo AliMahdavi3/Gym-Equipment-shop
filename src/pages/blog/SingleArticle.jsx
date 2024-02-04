@@ -15,7 +15,7 @@ const SingleArticle = () => {
     console.log(articleId);
 
     useEffect(() => {
-        axios.get(`http://localhost:4000/api/article/${articleId}`).then((res) => {
+        axios.get(`https://api.iliyafitness.com/api/article/${articleId}`).then((res) => {
             console.log(res.data);
             setData(res.data);
         }).catch((error) => {
@@ -24,7 +24,7 @@ const SingleArticle = () => {
     }, [articleId]);
 
     useEffect(() => {
-        axios.get('http://localhost:4000/api/comments').then((res) => {
+        axios.get('https://api.iliyafitness.com/api/comments').then((res) => {
             console.log(res.data.comments);
             setComment(res.data.comments)
         }).catch((error) => {
@@ -41,7 +41,7 @@ const SingleArticle = () => {
 
         try {
 
-            const res = await axios.post('http://localhost:4000/api/comment', formData, {
+            const res = await axios.post('https://api.iliyafitness.com/api/comment', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                 }
@@ -79,7 +79,7 @@ const SingleArticle = () => {
                     <div className="single_article pt-5">
                         <div className="container pt-5">
                             <div className='single_article_img pt-5'>
-                                <img src={`http://localhost:4000/` + data.article.imageUrl[0]}
+                                <img src={`https://api.iliyafitness.com/` + data.article.imageUrl[0]}
                                     className='rounded-5' alt="" />
                             </div>
                             <div dir='rtl'>

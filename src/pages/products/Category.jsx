@@ -5,7 +5,7 @@ const Category = ({ onCategorySelect }) => {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:4000/api/products').then((res) => {
+        axios.get('https://api.iliyafitness.com/api/products').then((res) => {
             const categories = res.data.products.reduce((acc, product) => {
                 if (!acc.includes(product.category)) {
                     acc.push(product.category);

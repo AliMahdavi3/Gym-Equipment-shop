@@ -9,7 +9,7 @@ const ProductsSection = ({ selectedCategory, searchTerm }) => {
 
 
     useEffect(() => {
-        axios.get('http://localhost:4000/api/products').then((res) => {
+        axios.get('https://api.iliyafitness.com/api/products').then((res) => {
             console.log(res.data.products);
             setData(res.data.products)
         }).catch((error) => {
@@ -40,7 +40,7 @@ const ProductsSection = ({ selectedCategory, searchTerm }) => {
                 <div key={index} className="products_card mx-2 my-2 col-12 col-md-4">
                     <Card className='card_pro' style={{ width: "15rem" }}>
                         <Card.Img style={{ height: "14rem" }} variant="top"
-                            src={'http://localhost:4000/' + d.imageUrl[0]} />
+                            src={'https://api.iliyafitness.com/' + d.imageUrl[0]} />
                         <Card.Body className='text-end'>
                             <Card.Title className='text-secondary fw-bold product_title_card'>{d.title}</Card.Title>
                             <Card.Text className='card_description'>

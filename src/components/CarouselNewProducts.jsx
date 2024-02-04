@@ -7,7 +7,7 @@ const CarouselNewProducts = ({ title }) => {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:4000/api/products').then((res) => {
+        axios.get('https://api.iliyafitness.com/api/products').then((res) => {
             console.log(res.data.products);
             const sortedProducts = res.data.products.sort((a, b) => (new Date(b.date) - new Date(a.date)));
             const lastThreeProducts = sortedProducts.slice(0, 3);
@@ -58,7 +58,7 @@ const CarouselNewProducts = ({ title }) => {
                         Array.isArray(data) ?
                             data.map((d, index) => (
                                 <div key={index} className='carousel_items my-3 mx-3 rounded-5 d-flex justify-content-center align-items-center'>
-                                    <img className='w-100 my-2 rounded-5 ' src={'http://localhost:4000/' + d.imageUrl[0]} alt="" />
+                                    <img className='w-100 my-2 rounded-5 ' src={'https://api.iliyafitness.com/' + d.imageUrl[0]} alt="" />
                                     <a className='a_tag fs-5 fw-semibold main_color' href={`products/${d._id}`}>{d.title}</a>
                                     <p className='fw-semibold carousel_content'>{d.content}</p>
                                 </div>

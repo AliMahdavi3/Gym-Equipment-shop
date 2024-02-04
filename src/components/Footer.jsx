@@ -1,5 +1,5 @@
 import React from 'react'
-import { BsInstagram, BsPhone, BsTelegram, BsWhatsapp } from 'react-icons/bs'
+import { FaInstagramSquare, FaTelegram, FaWhatsappSquare, FaPhoneSquareAlt } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -9,16 +9,16 @@ const Footer = () => {
           <div className="col-12 col-md-6 col-lg-4 justify-content-between align-items-center d-flex flex-column">
             <div className='pb-5'>
               <a className='a_tag text-dark fs-1 me-3' href="https://t.me/+989331070565">
-                <BsTelegram />
+                <FaTelegram className='text-info' />
               </a>
               <a className='a_tag text-dark fs-1 me-3' href="tel:+989331070565">
-                <BsPhone />
+                <FaPhoneSquareAlt className='text-dark' />
               </a>
               <a className='a_tag text-dark fs-1 me-3' href="https://www.instagram.com/iliyafitness1/">
-                <BsInstagram />
+                <FaInstagramSquare className='text-danger' />
               </a>
               <a className='a_tag text-dark fs-1 me-3' href="https://wa.me/+989331070565">
-                <BsWhatsapp />
+                <FaWhatsappSquare className='text-success' />
               </a>
             </div>
             <div className='pt-5 text-center'>

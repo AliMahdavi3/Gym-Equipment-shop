@@ -30,7 +30,7 @@ const Header = () => {
                     <a href="tel:+989331070565" className='text-decoration-none pt-2
                      text-light d-flex align-items-center'>
                         <BsFillTelephoneFill className='mx-2 pb-1' />
-                        احمدی:09331070565
+                        09331070565
                     </a>
                 </div>
             </nav>

@@ -10,7 +10,7 @@ const EquippedGym = () => {
   console.log(equippedGymId);
 
   useEffect(() => {
-    axios.get(`http://localhost:4000/api/equippedGym/${equippedGymId}`).then((res) => {
+    axios.get(`https://api.iliyafitness.com/api/equippedGym/${equippedGymId}`).then((res) => {
       console.log(res.data);
       setData(res.data)
     }).catch((error) => {
@@ -36,16 +36,16 @@ const EquippedGym = () => {
               </div>
               <div>
                 <div className='my-5'>
-                  <img src={'http://localhost:4000/' + data.equippedGym.imageUrl[0]} className='w-100 rounded-5' alt="" />
+                  <img src={'https://api.iliyafitness.com/' + data.equippedGym.imageUrl[0]} className='w-100 rounded-5' alt="" />
                 </div>
                 <div className='my-5'>
-                  <img src={'http://localhost:4000/' + data.equippedGym.imageUrl[1]} className='w-100 rounded-5' alt="" />
+                  <img src={'https://api.iliyafitness.com/' + data.equippedGym.imageUrl[1]} className='w-100 rounded-5' alt="" />
                 </div>
                 <div className='my-5'>
-                  <img src={'http://localhost:4000/' + data.equippedGym.imageUrl[2]} className='w-100 rounded-5' alt="" />
+                  <img src={'https://api.iliyafitness.com/' + data.equippedGym.imageUrl[2]} className='w-100 rounded-5' alt="" />
                 </div>
                 <div className='my-5'>
-                  <img src={'http://localhost:4000/' + data.equippedGym.imageUrl[3]} className='w-100 rounded-5' alt="" />
+                  <img src={'https://api.iliyafitness.com/' + data.equippedGym.imageUrl[3]} className='w-100 rounded-5' alt="" />
                 </div>
               </div>
             </div>

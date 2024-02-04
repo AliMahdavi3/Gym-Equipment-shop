@@ -10,7 +10,7 @@ const SingleProduct = () => {
     console.log(productId);
 
     useEffect(() => {
-        axios.get(`http://localhost:4000/api/product/${productId}`).then((res) => {
+        axios.get(`https://api.iliyafitness.com/api/product/${productId}`).then((res) => {
             console.log(res.data);
             setData(res.data);
         }).catch((error) => {
@@ -22,7 +22,6 @@ const SingleProduct = () => {
 
     return (
         <>
-            {/* Single-Product */}
             {
                 !data ? (
                     <h1 className='text-center mt-5 fw-bold'>درحال بارگذاری....!</h1>
@@ -32,12 +31,12 @@ const SingleProduct = () => {
                             <div className="row d-flex pb-5 singleProduct_container justify-content-center align-items-center">
                                 <div className="col-12 col-md-6 d-flex align-items-center flex-column">
                                     <div className='w-100 mt-2 mb-4 d-flex justify-content-center align-items-center'>
-                                        <img className='w-75 main_img_product' src={'http://localhost:4000/' + data.product.imageUrl[0]} alt="pro" />
+                                        <img className='w-75 main_img_product' src={'https://api.iliyafitness.com/' + data.product.imageUrl[0]} alt="pro" />
                                     </div>
                                     <div className='w-75 mt-2 d-flex justify-content-between align-items-center'>
-                                        <img className='w-25 side_view_img rounded-3' src={'http://localhost:4000/' + data.product.imageUrl[1]} alt="pro" />
-                                        <img className='w-25 side_view_img rounded-3' src={'http://localhost:4000/' + data.product.imageUrl[2]} alt="pro" />
-                                        <img className='w-25 side_view_img rounded-3' src={'http://localhost:4000/' + data.product.imageUrl[3]} alt="pro" />
+                                        <img className='w-25 side_view_img rounded-3' src={'https://api.iliyafitness.com/' + data.product.imageUrl[1]} alt="pro" />
+                                        <img className='w-25 side_view_img rounded-3' src={'https://api.iliyafitness.com/' + data.product.imageUrl[2]} alt="pro" />
+                                        <img className='w-25 side_view_img rounded-3' src={'https://api.iliyafitness.com/' + data.product.imageUrl[3]} alt="pro" />
                                     </div>
                                 </div>
                                 <div className="col-12 col-md-6 d-flex product_detail flex-column">
@@ -45,7 +44,7 @@ const SingleProduct = () => {
                                     <p className='fw-semibold mb-5'>
                                         {data.product.content}
                                     </p>
-                                    <h5 className='fw-semibold'>رنگ بندی متفاوت و همچنین سفارشی</h5>
+                                    <h5 className='fw-semibold'>رنگ بندی متفاوت و سفارشی</h5>
                                     <ul className='list-unstyled my-4 color_font'>
                                         <li className='mx-2 fs-2 text-success'><BsCircleFill /></li>
                                         <li className='mx-2 fs-2 text-warning'><BsCircleFill /></li>
