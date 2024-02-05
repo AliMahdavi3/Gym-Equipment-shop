@@ -1,18 +1,24 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 import moment from 'moment-jalaali';
+import swal from 'sweetalert';
 
 const NewArticle = () => {
   const [data, setData] = useState(null);
   useEffect(() => {
     axios.get(`https://api.iliyafitness.com/api/articles`).then((res) => {
-      console.log(res.data.articles);
       const lastIndex = res.data.articles.length - 1;
       setData(res.data.articles[lastIndex]);
     }).catch((error) => {
-      console.log(error.message);
-    })
+      swal({
+        title: "خطایی رخ داده!",
+        text: error.message,
+        icon: "warning",
+        button: "متوجه شدم",
+    });    })
   }, []);
+
+  
   return (
     <div className="new_article">
       < div className="row">

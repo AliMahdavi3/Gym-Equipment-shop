@@ -2,24 +2,28 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import swal from 'sweetalert'
+
 
 const CarouselNewProducts = ({ title }) => {
     const [data, setData] = useState([]);
 
     useEffect(() => {
         axios.get('https://api.iliyafitness.com/api/products').then((res) => {
-            console.log(res.data.products);
             const sortedProducts = res.data.products.sort((a, b) => (new Date(b.date) - new Date(a.date)));
             const lastThreeProducts = sortedProducts.slice(0, 3);
             setData(lastThreeProducts)
         }).catch((error) => {
-            console.log(error.message);
-        })
+            swal({
+                title: "خطایی رخ داده!",
+                text: error.message,
+                icon: "warning",
+                button: "متوجه شدم",
+            });        })
     }, []);
 
     const responsive = {
         superLargeDesktop: {
-            // the naming can be any, depends on you.
             breakpoint: { max: 4000, min: 3000 },
             items: 5
         },
@@ -47,19 +51,20 @@ const CarouselNewProducts = ({ title }) => {
                 <Carousel className='py-3'
                     showDots={true}
                     responsive={responsive}
-                    ssr={true} // means to render carousel on server-side.
+                    ssr={true}
                     infinite={true}
                     autoPlay={true}
-                    autoPlaySpeed={2000}
+                    autoPlaySpeed={1000}
                     customTransition="all 2s"
-                    transitionDuration={2000}
+                    transitionDuration={1000}
                     removeArrowOnDeviceType={["tablet", "mobile"]}>
                     {
                         Array.isArray(data) ?
                             data.map((d, index) => (
                                 <div key={index} className='carousel_items my-3 mx-3 rounded-5 d-flex justify-content-center align-items-center'>
                                     <img className='w-100 my-2 rounded-5 ' src={'https://api.iliyafitness.com/' + d.imageUrl[0]} alt="" />
-                                    <a className='a_tag fs-5 fw-semibold main_color' href={`products/${d._id}`}>{d.title}</a>
+                                    <a className='a_tag fs-5 fw-semibold main_color' 
+                                    href={`products/${d._id}`}>{d.title}</a>
                                     <p className='fw-semibold carousel_content'>{d.content}</p>
                                 </div>
                             )): null

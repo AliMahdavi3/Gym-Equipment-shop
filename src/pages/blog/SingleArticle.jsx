@@ -12,24 +12,29 @@ const SingleArticle = () => {
     const [email, setEmail] = useState('');
     const [content, setContent] = useState('');
 
-    console.log(articleId);
 
     useEffect(() => {
         axios.get(`https://api.iliyafitness.com/api/article/${articleId}`).then((res) => {
-            console.log(res.data);
             setData(res.data);
         }).catch((error) => {
-            console.log(error.message);
-        });
+            swal({
+                title: "خطایی رخ داده!",
+                text: error.message,
+                icon: "warning",
+                button: "متوجه شدم",
+            });        });
     }, [articleId]);
 
     useEffect(() => {
         axios.get('https://api.iliyafitness.com/api/comments').then((res) => {
-            console.log(res.data.comments);
             setComment(res.data.comments)
         }).catch((error) => {
-            console.log(error.message);
-        })
+            swal({
+                title: "خطایی رخ داده!",
+                text: error.message,
+                icon: "warning",
+                button: "متوجه شدم",
+            });        })
     }, [])
 
     const handleSubmit = async (e) => {
@@ -54,7 +59,6 @@ const SingleArticle = () => {
             }).then(() => {
                 window.location.reload()
             });
-            console.log(res.data);
         } catch (error) {
             swal({
                 title: "خطایی رخ داده!",
@@ -62,7 +66,6 @@ const SingleArticle = () => {
                 icon: "warning",
                 button: "متوجه شدم",
             });
-            console.log(error.message);
         }
     }
 

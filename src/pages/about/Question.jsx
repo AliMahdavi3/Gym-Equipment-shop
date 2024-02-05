@@ -1,16 +1,21 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import Accordion from 'react-bootstrap/Accordion';
+import swal from 'sweetalert'
 
 const Question = () => {
     const [data, setData] = useState([]);
 
     useEffect(() => {
         axios.get('https://api.iliyafitness.com/api/questions').then((res) => {
-            console.log(res.data.questions);
             setData(res.data.questions);
         }).catch((error) => {
-            console.log(error);
+            swal({
+                title: "خطایی رخ داده!",
+                text: error.message,
+                icon: "warning",
+                button: "متوجه شدم",
+            });
         });
     }, []);
 
@@ -25,17 +30,16 @@ const Question = () => {
                     {
                         Array.isArray(data) ?
                             data.map((d, index) => (
-                                <Accordion defaultActiveKey={[index]}>
+                                <Accordion key={index} defaultActiveKey={[index]}>
                                     <Accordion.Item className='mb-3 rounded-5' eventKey="0">
                                         <Accordion.Header>{d.title}</Accordion.Header>
                                         <Accordion.Body className='rounded-5 text-end fw-semibold fs-5'>
-                                           {d.content}
+                                            {d.content}
                                         </Accordion.Body>
                                     </Accordion.Item>
                                 </Accordion>
                             )) : null
                     }
-
                 </div>
             </div>
         </div>

@@ -1,19 +1,23 @@
 import axios from 'axios';
 import moment from 'moment-jalaali';
 import React, { useEffect, useState } from 'react'
+import swal from 'sweetalert';
 
 const Articles = () => {
     const [data, setData] = useState([]);
 
     useEffect(() => {
         axios.get('https://api.iliyafitness.com/api/articles').then((res) => {
-            console.log(res.data.articles);
             const sortArticles = res.data.articles.sort((a, b) => (new Date(b.date) - new Date(a.date)));
             const lastThreeArticles = sortArticles.slice(0, 4);
             setData(lastThreeArticles);
         }).catch((error) => {
-            console.log(error.message);
-        });
+            swal({
+                title: "خطایی رخ داده!",
+                text: error.message,
+                icon: "warning",
+                button: "متوجه شدم",
+            });        });
     }, []);
 
     return (

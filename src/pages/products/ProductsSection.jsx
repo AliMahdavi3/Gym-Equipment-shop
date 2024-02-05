@@ -2,6 +2,10 @@ import React, { useEffect, useState } from 'react'
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import axios from 'axios';
+import swal from 'sweetalert';
+
+
+
 const ProductsSection = ({ selectedCategory, searchTerm }) => {
     const [data, setData] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
@@ -10,11 +14,14 @@ const ProductsSection = ({ selectedCategory, searchTerm }) => {
 
     useEffect(() => {
         axios.get('https://api.iliyafitness.com/api/products').then((res) => {
-            console.log(res.data.products);
             setData(res.data.products)
         }).catch((error) => {
-            console.log(error.message);
-        })
+            swal({
+                title: "خطایی رخ داده!",
+                text: error.message,
+                icon: "warning",
+                button: "متوجه شدم",
+            });        })
     }, []);
 
     const filteredData = selectedCategory === 'All' ? data : data.filter((d) => d.category === selectedCategory);

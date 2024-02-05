@@ -3,19 +3,23 @@ import { BsCircleFill } from "react-icons/bs";
 import Footer from '../../components/Footer';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
+import swal from 'sweetalert';
+
 
 const SingleProduct = () => {
     let { productId } = useParams();
     const [data, setData] = useState(null);
-    console.log(productId);
 
     useEffect(() => {
         axios.get(`https://api.iliyafitness.com/api/product/${productId}`).then((res) => {
-            console.log(res.data);
             setData(res.data);
         }).catch((error) => {
-            console.log(error);
-        });
+            swal({
+                title: "خطایی رخ داده!",
+                text: error.message,
+                icon: "warning",
+                button: "متوجه شدم",
+            });        });
     }, [productId]);
 
 
@@ -52,11 +56,10 @@ const SingleProduct = () => {
                                         <li className='mx-2 fs-2 text-danger'><BsCircleFill /></li>
                                         <li className='mx-2 fs-2 text-secondary'><BsCircleFill /></li>
                                     </ul>
-                                    <button
-                                        className='btn order_color_1 mb-2 mt-5 w-100 py-2 fw-semibold'>
-                                            <a className="text-dark a_tag" href="/products">ثبت سفارش</a></button>
-                                    <button className='btn order_color_2 my-2 w-100 py-2 fw-semibold'>
-                                        <a className='a_tag text-dark' href="/">تماس با پشتیبانی</a></button>
+                                    <a className="btn order_color_1 mb-2 mt-5 w-100 py-2 
+                                    fw-semibold text-dark a_tag" href="tel:+989331070565">09331070565 : ثبت سفارش</a>
+                                    <a className='btn order_color_2 my-2 w-100 py-2 
+                                    fw-semibold a_tag text-dark' href="tel:+989331070565">تماس با پشتیبانی</a>
                                 </div>
                             </div>
                             <p className='fw-bold mt-4'>{data.product.productCode} : <span className='text-success fw-bold'>کد کالا </span></p>

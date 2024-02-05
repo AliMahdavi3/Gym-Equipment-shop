@@ -1,5 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
+import swal from 'sweetalert';
+
 
 const Category = ({ onCategorySelect }) => {
     const [data, setData] = useState([]);
@@ -14,8 +16,12 @@ const Category = ({ onCategorySelect }) => {
             }, []);
             setData(categories);
         }).catch((error) => {
-            console.log(error.message);
-        })
+            swal({
+                title: "خطایی رخ داده!",
+                text: error.message,
+                icon: "warning",
+                button: "متوجه شدم",
+            });        })
     }, []);
 
     const handleCategorySelect = (category) => {

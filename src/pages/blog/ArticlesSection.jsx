@@ -1,6 +1,8 @@
 import axios from 'axios';
 import moment from 'moment-jalaali';
 import React, { useEffect, useState } from 'react'
+import swal from 'sweetalert';
+
 
 const ArticlesSection = () => {
     const [data, setData] = useState([]);
@@ -9,11 +11,14 @@ const ArticlesSection = () => {
 
     useEffect(() => {
         axios.get('https://api.iliyafitness.com/api/articles').then((res) => {
-            console.log(res.data.articles);
             setData(res.data.articles);
         }).catch((error) => {
-            console.log(error.message);
-        })
+            swal({
+                title: "خطایی رخ داده!",
+                text: error.message,
+                icon: "warning",
+                button: "متوجه شدم",
+            });        })
     }, []);
 
 

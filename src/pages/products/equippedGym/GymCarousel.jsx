@@ -1,17 +1,22 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import Carousel from 'react-bootstrap/Carousel';
+import swal from 'sweetalert';
+
 
 const GymCarousel = () => {
     const [data, setData] = useState([]);
 
     useEffect(() => {
         axios.get('https://api.iliyafitness.com/api/equippedGyms').then((res) => {
-            console.log(res.data.equippedGyms);
             setData(res.data.equippedGyms);
         }).catch((error) => {
-            console.log(error.message);
-        })
+            swal({
+                title: "خطایی رخ داده!",
+                text: error.message,
+                icon: "warning",
+                button: "متوجه شدم",
+            });        })
     }, [])
 
     return (

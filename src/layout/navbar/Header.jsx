@@ -37,7 +37,7 @@ const Header = () => {
             <nav className='main_navbar'>
                 <Navbar expand={"md"} className="navbar_2 mb-3">
                     <Container>
-                        <Navbar.Brand href='/' className='fw-bold d-flex align-items-center fs-2 mx-2 brand_logo'>
+                        <Navbar.Brand className='fw-bold d-flex align-items-center fs-2 mx-2 brand_logo'>
                             <a className='a_tag fs-1' href="/">F</a>
                             <img src="/assets/images/gym_logo.png" className='d-none d-md-inline rounded-3 mx-1 py-2' alt="" />
                             <a className='a_tag fs-1' href="/">ITNESS</a>

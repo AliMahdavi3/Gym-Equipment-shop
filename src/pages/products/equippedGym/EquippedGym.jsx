@@ -2,20 +2,22 @@ import React, { useEffect, useState } from 'react'
 import Footer from '../../../components/Footer'
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
-
+import swal from 'sweetalert';
 
 const EquippedGym = () => {
   let { equippedGymId } = useParams();
   const [data, setData] = useState(null);
-  console.log(equippedGymId);
 
   useEffect(() => {
     axios.get(`https://api.iliyafitness.com/api/equippedGym/${equippedGymId}`).then((res) => {
-      console.log(res.data);
       setData(res.data)
     }).catch((error) => {
-      console.log(error.message);
-    });
+      swal({
+        title: "خطایی رخ داده!",
+        text: error.message,
+        icon: "warning",
+        button: "متوجه شدم",
+    });    });
   }, [equippedGymId]);
 
   return (

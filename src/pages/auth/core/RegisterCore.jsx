@@ -9,7 +9,6 @@ export const initialValues = {
 }
 
 export const onSubmit = async (values, action, setRegistered, navigate) => {
-    console.log(values);
     axios.post('https://api.iliyafitness.com/auth/register', values, {
         headers: {
             'Content-Type': 'application/json',
@@ -20,7 +19,6 @@ export const onSubmit = async (values, action, setRegistered, navigate) => {
         })
     }).then(res => {
         if (res.status === 201) {
-            console.log(res);
             swal({
                 title: "عملیات موفقیت آمیز بود",
                 text: "ثبت نام انجام شد!",
@@ -38,8 +36,12 @@ export const onSubmit = async (values, action, setRegistered, navigate) => {
             });
         }
     }).catch(error => {
-        console.log(error.message);
-    })
+        swal({
+            title: "خطایی رخ داده!",
+            text: error.message,
+            icon: "warning",
+            button: "متوجه شدم",
+        });    })
 
 }
 

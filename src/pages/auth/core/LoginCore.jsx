@@ -10,7 +10,6 @@ export const initialValues = {
 export const onSubmit = async (values, action, navigate) => {
     axios.post('https://api.iliyafitness.com/auth/login', values).then(res => {
         if (res.status === 200) {
-            console.log(res);
             localStorage.setItem('Token', JSON.stringify(res.data));
             swal({
                 title: "عملیات موفقیت آمیز بود",
@@ -21,8 +20,12 @@ export const onSubmit = async (values, action, navigate) => {
             navigate('/');
         }
     }).catch(error => {
-        console.log(error);
-    })
+        swal({
+            title: "خطایی رخ داده!",
+            text: error.message,
+            icon: "warning",
+            button: "متوجه شدم",
+        });    })
 }
 
 export const validationSchema = Yup.object({

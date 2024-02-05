@@ -9,16 +9,16 @@ const Footer = () => {
           <div className="col-12 col-md-6 col-lg-4 justify-content-between align-items-center d-flex flex-column">
             <div className='pb-5'>
               <a className='a_tag text-dark fs-1 me-3' href="https://t.me/+989331070565">
-                <FaTelegram className='text-info' />
+                <FaTelegram className='text-dark' />
               </a>
               <a className='a_tag text-dark fs-1 me-3' href="tel:+989331070565">
                 <FaPhoneSquareAlt className='text-dark' />
               </a>
               <a className='a_tag text-dark fs-1 me-3' href="https://www.instagram.com/iliyafitness1/">
-                <FaInstagramSquare className='text-danger' />
+                <FaInstagramSquare className='text-dark' />
               </a>
               <a className='a_tag text-dark fs-1 me-3' href="https://wa.me/+989331070565">
-                <FaWhatsappSquare className='text-success' />
+                <FaWhatsappSquare className='text-dark' />
               </a>
             </div>
             <div className='pt-5 text-center'>

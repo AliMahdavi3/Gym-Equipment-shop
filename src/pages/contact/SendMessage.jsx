@@ -30,7 +30,6 @@ const SendMessage = () => {
             }).then(() => {
                 window.location.reload()
             });
-            console.log(res.data);
         }
         catch (error) {
             swal({
@@ -39,7 +38,6 @@ const SendMessage = () => {
                 icon: "warning",
                 button: "متوجه شدم",
             });
-            console.log(error.message);
         }
     }
 
@@ -56,9 +54,9 @@ const SendMessage = () => {
                             <input value={name} onChange={(e) => setName(e.target.value)} className='text-end w-100 fw-semibold px-3 border border-0 rounded-3 mb-3 py-2 form_shadow' placeholder='نام' type="text" name="" id="" />
                             <input value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} className='text-end w-100 fw-semibold px-3 border border-0 rounded-3 mb-3 py-2 form_shadow' placeholder="شماره تلفن" type="text" name="" id="" />
                             <textarea value={content} onChange={(e) => setContent(e.target.value)} className='text-end w-100 fw-semibold px-3 border border-0 rounded-3 mb-3 py-2 form_shadow' placeholder="پیام" name="" id="" cols="30" rows="10"></textarea>
-                            <div className="submit_btn mt-3 mb-5">
+                            <div className="submit_btn w-100 mt-3 mb-5">
                                 <button type='submit'
-                                    className='btn btn-primary px-3 mx-2' disabled={isSubmitting}>
+                                    className='btn btn-primary w-100 px-3 mx-2' disabled={isSubmitting}>
                                     {isSubmitting ? 'لطفا صبر کنید...' : 'ثبت'}</button>
                             </div>
                         </form>

@@ -6,12 +6,9 @@ import Question from './Question';
 const AboutUs = () => {
     return (
         <>
-            {/* Landing Page */}
             <LandingPage dir="rtl" className="about" title="ایلیافیتنس" 
             secondTitle="درباره" thirdTitle="گارانتی محصولات , خدمات و پشتیبانی" 
             link='/products' button="محصولات" />
-
-            {/* About us */}
             <div className="about_us_page py-5">
                 <div className="container">
                     <div className="row d-flex py-5 justify-content-center align-items-center">
@@ -40,8 +37,6 @@ const AboutUs = () => {
                     </div>
                 </div>
             </div>
-
-            {/* Services */}
             <div className="services_about_page py-5">
                 <div className="container">
                     <div className="services_about_title text-center pt-3">
@@ -67,12 +62,7 @@ const AboutUs = () => {
                     </div>
                 </div>
             </div>
-
-            {/* Common-Questions */}
             <Question/>
-
-
-            {/* Footer */}
             <Footer/>
         </>
     )
